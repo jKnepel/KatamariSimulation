@@ -130,5 +130,5 @@ MonoBehaviour:
   _attachableMaterial: {fileID: 2100000, guid: 5bdf56e7229467c46a85e61459cebd93, type: 2}
   _restColor: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
   _activeColor: {r: 1, g: 0.06132078, b: 0.06132078, a: 1}
-  _gravitationalPull: 2000
+  _gravitationalPull: 3000
   _isAttached: 0

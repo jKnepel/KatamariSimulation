@@ -15,8 +15,8 @@ public class Attachable : MonoBehaviour
 	private const float FADE_DURATION = 3;
 
 	[SerializeField] private Material	_attachableMaterial;
-	[SerializeField] private Color		_restColor = new(0.8f, 0.8f, 0.8f, 1);
-	[SerializeField] private Color		_activeColor = new(1, 0, 0, 1);
+	[SerializeField] private Color		_restColor = new(0.8f, 0.8f, 0.8f);
+	[SerializeField] private Color		_activeColor = new(1, 0, 0);
 
 	[SerializeField] private float _gravitationalPull = 2000;
 
@@ -45,8 +45,8 @@ public class Attachable : MonoBehaviour
 			return;
 
 		float distance = Vector3.Distance(transform.position, _attachedTo.position);
-		_material.color = Color.Lerp(_activeColor, _restColor, Map(distance, 0, _maxDistance, 1, 0));
 		float strength = Map(distance, _maxDistance, 0, 0, _gravitationalPull);
+		_material.color = Color.Lerp(_activeColor, _restColor, Map(distance, 0, _maxDistance, 1, 0));
 		_rb.AddForce(strength * Time.fixedDeltaTime * (_attachedTo.position - transform.position));
 	}
 
@@ -71,6 +71,7 @@ public class Attachable : MonoBehaviour
 
 		IsAttached = false;
 		_attachedTo = null;
+		_maxDistance = 0;
 		IEnumerator FadeToRestColor()
 		{
 			float time = 0;

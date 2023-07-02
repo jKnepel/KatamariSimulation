@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AttachablesSpawner : MonoBehaviour
@@ -19,6 +18,7 @@ public class AttachablesSpawner : MonoBehaviour
 	{
 		int numberOfColumns = (int)Math.Ceiling(Mathf.Sqrt(_numberOfAttachables));
 		int numberOfRows = (int)Math.Ceiling((float)_numberOfAttachables / numberOfColumns);
+		int remainder = numberOfColumns * (numberOfRows - 1);
 		float startX = -(((float)(numberOfColumns - 1)) / 2 * _spawnOffset);
 		float startZ = -(((float)(numberOfRows - 1)) / 2 * _spawnOffset);
 
@@ -26,7 +26,7 @@ public class AttachablesSpawner : MonoBehaviour
 		{
 			for (int j = 0; j < numberOfRows; j++)
 			{
-				if (i == numberOfColumns - 1 && (numberOfColumns * (numberOfRows - 1)) + j >= _numberOfAttachables)
+				if (i == numberOfColumns - 1 && remainder + j >= _numberOfAttachables)
 					return;
 
 				float x = startX + i * _spawnOffset;
