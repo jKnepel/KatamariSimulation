@@ -9,6 +9,14 @@ public class Attachable : MonoBehaviour
 
 	private Rigidbody _rb;
 	private Transform _attachedTo;
+	private Material _material;
+
+	private const float MAX_DISTANCE = 3;
+	private const float FADE_DURATION = 3;
+
+	[SerializeField] private Material	_attachableMaterial;
+	[SerializeField] private Color		_restColor = new(0.8f, 0.8f, 0.8f, 1);
+	[SerializeField] private Color		_activeColor = new(1, 0, 0, 1);
 
 	[SerializeField] private float _gravitationalPull = 2000;
 
@@ -26,15 +34,19 @@ public class Attachable : MonoBehaviour
 	private void OnEnable()
 	{
 		_rb = GetComponent<Rigidbody>();
+		_material = Instantiate(_attachableMaterial);
+		GetComponent<Renderer>().material = _material;
+		_material.color = _restColor;
 	}
 
 	private void FixedUpdate()
 	{
-		if (!_isAttached)
+		if (!IsAttached)
 			return;
 
 		float distance = Vector3.Distance(transform.position, _attachedTo.position);
-		float strength = Map(distance, 5, 0, 0, _gravitationalPull);
+		_material.color = Color.Lerp(_activeColor, _restColor, Map(distance, 0, MAX_DISTANCE, 1, 0));
+		float strength = Map(distance, MAX_DISTANCE, 0, 0, _gravitationalPull);
 		_rb.AddForce(strength * Time.fixedDeltaTime * (_attachedTo.position - transform.position));
 	}
 
@@ -44,20 +56,33 @@ public class Attachable : MonoBehaviour
 
 	public void Attach(Transform transform)
 	{
-		if (_isAttached)
+		if (IsAttached)
 			return;
 
-		_isAttached = true;
+		IsAttached = true;
 		_attachedTo = transform;
 	}
 
 	public void Detach()
 	{
-		if (!_isAttached)
+		if (!IsAttached)
 			return;
 
-		_isAttached = false;
+		IsAttached = false;
 		_attachedTo = null;
+		IEnumerator FadeToRestColor()
+		{
+			float time = 0;
+			Color startColor = _material.color;
+
+			while (time < FADE_DURATION && !IsAttached)
+			{
+				_material.color = Color.Lerp(startColor, _restColor, time / FADE_DURATION);
+				time += Time.deltaTime;
+				yield return null;
+			}
+		}
+		StartCoroutine(FadeToRestColor());
 	}
 
 	#endregion
