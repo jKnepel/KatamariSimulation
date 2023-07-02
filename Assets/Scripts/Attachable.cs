@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(Collider))]
@@ -7,11 +7,11 @@ public class Attachable : MonoBehaviour
 {
 	#region attributes
 
-	private Rigidbody _rb;
-	private Transform _attachedTo;
-	private Material _material;
+	private Rigidbody	_rb;
+	private Transform	_attachedTo;
+	private Material	_material;
+	private float		_maxDistance = 0;
 
-	private const float MAX_DISTANCE = 3;
 	private const float FADE_DURATION = 3;
 
 	[SerializeField] private Material	_attachableMaterial;
@@ -45,8 +45,8 @@ public class Attachable : MonoBehaviour
 			return;
 
 		float distance = Vector3.Distance(transform.position, _attachedTo.position);
-		_material.color = Color.Lerp(_activeColor, _restColor, Map(distance, 0, MAX_DISTANCE, 1, 0));
-		float strength = Map(distance, MAX_DISTANCE, 0, 0, _gravitationalPull);
+		_material.color = Color.Lerp(_activeColor, _restColor, Map(distance, 0, _maxDistance, 1, 0));
+		float strength = Map(distance, _maxDistance, 0, 0, _gravitationalPull);
 		_rb.AddForce(strength * Time.fixedDeltaTime * (_attachedTo.position - transform.position));
 	}
 
@@ -61,6 +61,7 @@ public class Attachable : MonoBehaviour
 
 		IsAttached = true;
 		_attachedTo = transform;
+		_maxDistance = transform.GetComponents<Collider>().First(x => x.isTrigger).bounds.size.x;
 	}
 
 	public void Detach()
