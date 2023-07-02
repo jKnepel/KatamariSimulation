@@ -10,7 +10,8 @@ public class Attachable : MonoBehaviour
 	private Rigidbody _rb;
 	private Transform _attachedTo;
 
-	[SerializeField] private float _gravitationalPull = 5000;
+	[SerializeField] private float _gravitationalPull = 2000;
+
 	[SerializeField] private bool _isAttached;
     public bool IsAttached 
     {
@@ -33,7 +34,7 @@ public class Attachable : MonoBehaviour
 			return;
 
 		float distance = Vector3.Distance(transform.position, _attachedTo.position);
-		float strength = Map(distance, 5, 3, 0, _gravitationalPull);
+		float strength = Map(distance, 5, 0, 0, _gravitationalPull);
 		_rb.AddForce(strength * Time.fixedDeltaTime * (_attachedTo.position - transform.position));
 	}
 
