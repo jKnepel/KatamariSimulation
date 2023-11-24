@@ -1,5 +1,3 @@
-using jKnepel.SimpleUnityNetworking.Managing;
-using jKnepel.SimpleUnityNetworking.Networking;
 using jKnepel.SimpleUnityNetworking.Serialisation;
 using System.Collections;
 using System.Linq;
@@ -16,25 +14,18 @@ namespace jKnepel.Katamari
 		private Material _material;
 		private float _maxDistance = 0;
 
-		private const float FADE_DURATION = 3;
 
 		[SerializeField] private Rigidbody _rb;
 		[SerializeField] private Material _attachableMaterial;
 		[SerializeField] private Color _restColor = new(0.8f, 0.8f, 0.8f);
 		[SerializeField] private Color _activeColor = new(1, 0, 0);
 		[SerializeField] private float _velocityDeadzone = 1.5f;
-
 		[SerializeField] private float _gravitationalPull = 3000;
+		[SerializeField] private float _fadeDuration = 3;
 
-		[SerializeField] private bool _isAttached;
-		public bool IsAttached
-		{
-			get => _isAttached;
-			private set => _isAttached = value;
-		}
-
-		private NetworkManager _networkManager;
-		private string _name;
+		public bool IsAttached { get; private set; }
+		public bool AtRest { get; private set; }
+		public Rigidbody Rigidbody => _rb;
 
 		#endregion
 
@@ -49,30 +40,40 @@ namespace jKnepel.Katamari
 
 		private void FixedUpdate()
 		{
-			if (_networkManager.IsConnected && _networkManager.IsHost)
-				SendAttachable();
+			if (AtRest && (_rb.velocity.magnitude > _velocityDeadzone || _rb.angularVelocity.magnitude > _velocityDeadzone))
+			{
+				_material.color = _activeColor;
+				AtRest = false;
+			}
+			else if (!AtRest && (_rb.velocity.magnitude <= _velocityDeadzone || _rb.angularVelocity.magnitude <= _velocityDeadzone))
+			{
+				IEnumerator FadeToRestColor()
+				{
+					float time = 0;
+					Color startColor = _material.color;
+
+					while (time < _fadeDuration && !IsAttached)
+					{
+						_material.color = Color.Lerp(startColor, _restColor, time / _fadeDuration);
+						time += Time.deltaTime;
+						yield return null;
+					}
+				}
+				StartCoroutine(FadeToRestColor());
+				AtRest = true;
+			}
 
 			if (!IsAttached)
 				return;
 
 			float distance = Vector3.Distance(transform.position, _attachedTo.position);
 			float strength = Map(distance, _maxDistance, 0, 0, _gravitationalPull);
-			_material.color = Color.Lerp(_activeColor, _restColor, Map(distance, 0, _maxDistance, 1, 0));
 			_rb.AddForce(strength * Time.fixedDeltaTime * (_attachedTo.position - transform.position));
 		}
 
 		#endregion
 
 		#region public methods
-
-		public void Initiate(int index)
-		{
-			_name = $"Attachable#{index}";
-			if (_networkManager == null)
-				_networkManager = GameObject.FindWithTag("NetworkManager").GetComponent<NetworkManager>();
-			_networkManager.OnConnected += () => _networkManager.RegisterByteData(_name, UpdateAttachable);
-			_networkManager.OnDisconnected += () => _networkManager.UnregisterByteData(_name, UpdateAttachable);
-		}
 
 		public void Attach(Transform transform)
 		{
@@ -92,63 +93,11 @@ namespace jKnepel.Katamari
 			IsAttached = false;
 			_attachedTo = null;
 			_maxDistance = 0;
-			IEnumerator FadeToRestColor()
-			{
-				float time = 0;
-				Color startColor = _material.color;
-
-				while (time < FADE_DURATION && !IsAttached)
-				{
-					_material.color = Color.Lerp(startColor, _restColor, time / FADE_DURATION);
-					time += Time.deltaTime;
-					yield return null;
-				}
-			}
-			StartCoroutine(FadeToRestColor());
 		}
 
 		#endregion
 
 		#region private methods
-
-		private void SendAttachable()
-		{
-			Vector3 position = _rb.position;
-			Quaternion rotation = _rb.rotation;
-			bool atRest = true;
-			Vector3 linearVelocity = Vector3.zero;
-			Vector3 angularVelocity = Vector3.zero;
-			if (_rb.velocity.magnitude > _velocityDeadzone || _rb.angularVelocity.magnitude > _velocityDeadzone)
-			{
-				atRest = false;
-				linearVelocity = _rb.velocity;
-				angularVelocity = _rb.angularVelocity;
-			}
-
-			AttachableData data = new()
-			{
-				Position = position,
-				Rotation = rotation,
-				AtRest = atRest,
-				LinearVelocity = linearVelocity,
-				AngularVelocity = angularVelocity
-			};
-
-			BitWriter _bitWriter = new(_networkManager.NetworkConfiguration.SerialiserConfiguration);
-			_bitWriter.Write(data);
-			
-			_networkManager.SendByteDataToAll(_name, _bitWriter.GetBuffer(), ENetworkChannel.UnreliableOrdered);
-		}
-
-		private void UpdateAttachable(byte sender, byte[] data)
-		{
-			BitReader reader = new(data, _networkManager.NetworkConfiguration.SerialiserConfiguration);
-			AttachableData attachableData = reader.Read<AttachableData>();
-			_rb.position = attachableData.Position;
-			_rb.rotation = attachableData.Rotation;
-			_rb.velocity = attachableData.LinearVelocity;
-			_rb.angularVelocity = attachableData.AngularVelocity;
-		}
 
 		private static float Map(float value, float from1, float from2, float to1, float to2)
 		{
@@ -165,6 +114,21 @@ namespace jKnepel.Katamari
 		public bool AtRest;
 		public Vector3 LinearVelocity;
 		public Vector3 AngularVelocity;
+
+		public AttachableData(Attachable att)
+		{
+			Position = att.Rigidbody.position;
+			Rotation = att.Rigidbody.rotation;
+			AtRest = true;
+			LinearVelocity = Vector3.zero;
+			AngularVelocity = Vector3.zero;
+			if (att.AtRest)
+			{
+				AtRest = false;
+				LinearVelocity = att.Rigidbody.velocity;
+				AngularVelocity = att.Rigidbody.angularVelocity;
+			}
+		}
 
 		public static AttachableData ReadAttachableData(BitReader reader)
 		{

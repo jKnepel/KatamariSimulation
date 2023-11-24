@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 1107046141}
   - component: {fileID: 1107046140}
   m_Layer: 0
-  m_Name: AttachablesSpawner
+  m_Name: AttachablesManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -383,6 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9a4efef11f52346a0a3795d9572356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _networkManager: {fileID: 215654682}
   _attachableParent: {fileID: 1107046141}
   _attachablePrefab: {fileID: 7763944478135559460, guid: c9e4ce01a59dd264aac859de8ec0b75c, type: 3}
   _numberOfAttachables: 5
@@ -414,6 +415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpherePlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 2140932487166147211, guid: 087609de4a70ead4e8482c905b0bffb8, type: 3}
+      propertyPath: _networkManager
+      value: 
+      objectReference: {fileID: 215654682}
     - target: {fileID: 2140932487166147222, guid: 087609de4a70ead4e8482c905b0bffb8, type: 3}
       propertyPath: m_RootOrder
       value: 2

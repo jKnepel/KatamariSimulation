@@ -1,3 +1,4 @@
+using jKnepel.SimpleUnityNetworking.Managing;
 using UnityEngine;
 
 namespace jKnepel.Katamari
@@ -7,6 +8,7 @@ namespace jKnepel.Katamari
 	{
 		#region attributes
 
+		[SerializeField] private NetworkManager _networkManager;
 		[SerializeField] private Rigidbody _rb;
 		[SerializeField] private Camera _camera;
 		[SerializeField] private Vector3 _cameraOffset = new(0, 3, -7);
@@ -19,7 +21,7 @@ namespace jKnepel.Katamari
 
 		#region lifecycle
 
-		private void OnEnable()
+		private void Awake()
 		{
 			if (_rb == null)
 				_rb = GetComponent<Rigidbody>();
@@ -27,12 +29,8 @@ namespace jKnepel.Katamari
 				_camera = Camera.main;
 
 			_input = new();
-			_input.Enable();
-		}
-
-		private void OnDisable()
-		{
-			_input.Disable();
+			_networkManager.OnConnected += () => _input.Enable();
+			_networkManager.OnDisconnected += () => _input.Disable();
 		}
 
 		private void FixedUpdate()
