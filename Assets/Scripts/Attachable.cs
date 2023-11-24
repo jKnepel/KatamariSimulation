@@ -14,7 +14,6 @@ namespace jKnepel.Katamari
 		private Material _material;
 		private float _maxDistance = 0;
 
-
 		[SerializeField] private Rigidbody _rb;
 		[SerializeField] private Material _attachableMaterial;
 		[SerializeField] private Color _restColor = new(0.8f, 0.8f, 0.8f);

@@ -16,7 +16,7 @@ namespace jKnepel.Katamari
 		[SerializeField] private int		_numberOfAttachables = 50;
 		[SerializeField] private float		_spawnOffset = 2.0f;
 
-		private Attachable[] _attachables;
+		[SerializeField] private Attachable[] _attachables;
 
 		#endregion
 
@@ -24,6 +24,11 @@ namespace jKnepel.Katamari
 
 		private void Awake()
 		{
+			if (_networkManager == null)
+				_networkManager = GameObject.FindWithTag("NetworkManager").GetComponent<NetworkManager>();
+			if (_attachableParent == null)
+				_attachableParent = transform;
+
 			_networkManager.OnConnected += () => _networkManager.RegisterByteData("Attachables", UpdateAttachables);
 			_networkManager.OnDisconnected += () => _networkManager.UnregisterByteData("Attachables", UpdateAttachables);
 

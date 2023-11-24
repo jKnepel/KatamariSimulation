@@ -23,6 +23,8 @@ namespace jKnepel.Katamari
 
 		private void Awake()
 		{
+			if (_networkManager == null)
+				_networkManager = GameObject.FindWithTag("NetworkManager").GetComponent<NetworkManager>();
 			if (_rb == null)
 				_rb = GetComponent<Rigidbody>();
 			if (_camera == null)
