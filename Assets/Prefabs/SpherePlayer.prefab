@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d31359086312149a78c1e8e55fe533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rb: {fileID: 2140932487166147210}
   _camera: {fileID: 0}
   _cameraOffset: {x: 0, y: 3, z: -7}
   _horizontalInput:
