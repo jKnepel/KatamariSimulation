@@ -18,12 +18,11 @@ namespace jKnepel.Katamari
 
 		private const float FADE_DURATION = 3;
 
-		[SerializeField] private NetworkManager _networkManager;
 		[SerializeField] private Rigidbody _rb;
 		[SerializeField] private Material _attachableMaterial;
 		[SerializeField] private Color _restColor = new(0.8f, 0.8f, 0.8f);
 		[SerializeField] private Color _activeColor = new(1, 0, 0);
-		[SerializeField] private float _velocityDeadzone = 0.1f;
+		[SerializeField] private float _velocityDeadzone = 1.5f;
 
 		[SerializeField] private float _gravitationalPull = 3000;
 
@@ -34,8 +33,8 @@ namespace jKnepel.Katamari
 			private set => _isAttached = value;
 		}
 
+		private NetworkManager _networkManager;
 		private string _name;
-		private readonly Writer _bitWriter = new();
 
 		#endregion
 
@@ -135,15 +134,15 @@ namespace jKnepel.Katamari
 				AngularVelocity = angularVelocity
 			};
 
-			_bitWriter.Clear();
+			BitWriter _bitWriter = new(_networkManager.NetworkConfiguration.SerialiserConfiguration);
 			_bitWriter.Write(data);
-
+			
 			_networkManager.SendByteDataToAll(_name, _bitWriter.GetBuffer(), ENetworkChannel.UnreliableOrdered);
 		}
 
 		private void UpdateAttachable(byte sender, byte[] data)
 		{
-			Reader reader = new(data, _networkManager.NetworkConfiguration.SerialiserConfiguration);
+			BitReader reader = new(data, _networkManager.NetworkConfiguration.SerialiserConfiguration);
 			AttachableData attachableData = reader.Read<AttachableData>();
 			_rb.position = attachableData.Position;
 			_rb.rotation = attachableData.Rotation;
@@ -167,7 +166,7 @@ namespace jKnepel.Katamari
 		public Vector3 LinearVelocity;
 		public Vector3 AngularVelocity;
 
-		public static AttachableData ReadAttachableData(Reader reader)
+		public static AttachableData ReadAttachableData(BitReader reader)
 		{
 			Vector3 position = reader.ReadVector3();
 			Quaternion rotation = reader.ReadQuaternion();
@@ -185,7 +184,7 @@ namespace jKnepel.Katamari
 			};
 		}
 
-		public static void WriteAttachableData(Writer writer, AttachableData data)
+		public static void WriteAttachableData(BitWriter writer, AttachableData data)
 		{
 			writer.WriteVector3(data.Position);
 			writer.WriteQuaternion(data.Rotation);

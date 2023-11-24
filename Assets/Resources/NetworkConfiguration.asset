@@ -24,11 +24,11 @@ MonoBehaviour:
   _serverDiscoveryTimeout: 3000
   _maxNumberResendReliablePackets: 5
   _serialiserConfiguration:
-    _compressFloats: 0
+    _compressFloats: 1
     _floatMinValue: -1000
     _floatMaxValue: 1000
     _floatResolution: 0.001
-    _compressQuaternions: 0
+    _compressQuaternions: 1
     _bitsPerComponent: 9
   _discoveryIP: 239.240.240.149
   _discoveryPort: 26824
