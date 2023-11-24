@@ -15,8 +15,11 @@ namespace jKnepel.Katamari
 		[SerializeField] private Attachable _attachablePrefab;
 		[SerializeField] private int		_numberOfAttachables = 50;
 		[SerializeField] private float		_spawnOffset = 2.0f;
+		[SerializeField] private int		_tickRate = 64;
 
 		[SerializeField] private Attachable[] _attachables;
+
+		private float _currentTime = 0;
 
 		#endregion
 
@@ -63,7 +66,12 @@ namespace jKnepel.Katamari
 			if (!_networkManager.IsHost)
 				return;
 
-			SendAttachables();
+			if (_currentTime > 1 / (float)_tickRate)
+			{
+				SendAttachables();
+				_currentTime = 0;
+			}
+			_currentTime += Time.deltaTime;
 		}
 
 		#endregion
