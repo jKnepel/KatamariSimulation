@@ -1,24 +1,19 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace jKnepel.Katamari
 {
-	[RequireComponent(typeof(Rigidbody), typeof(PlayerInput))]
+	[RequireComponent(typeof(Rigidbody))]
 	public class Player : MonoBehaviour
 	{
 		#region attributes
 
 		[SerializeField] private Rigidbody _rb;
-
 		[SerializeField] private Camera _camera;
 		[SerializeField] private Vector3 _cameraOffset = new(0, 3, -7);
 
-		[SerializeField] private InputActionProperty _horizontalInput;
-		[SerializeField] private InputActionProperty _verticalInput;
-
 		[SerializeField] private float _forceMult = 100;
-
-		private Vector2 _movementDirection = new();
+		
+		private DefaultInputActions _input;
 
 		#endregion
 
@@ -30,19 +25,20 @@ namespace jKnepel.Katamari
 				_rb = GetComponent<Rigidbody>();
 			if (_camera == null)
 				_camera = Camera.main;
+
+			_input = new();
+			_input.Enable();
 		}
 
-		private void Update()
+		private void OnDisable()
 		{
-			if (_horizontalInput.action != null)
-				_movementDirection.x = _horizontalInput.action.ReadValue<float>();
-			if (_verticalInput.action != null)
-				_movementDirection.y = _verticalInput.action.ReadValue<float>();
+			_input.Disable();
 		}
 
 		private void FixedUpdate()
 		{
-			Vector3 delta = new(_movementDirection.x, 0, _movementDirection.y);
+			Vector2 dir = _input.gameplay.directional.ReadValue<Vector2>();
+			Vector3 delta = new(dir.x, 0, dir.y);
 			_rb.AddForce(_forceMult * Time.fixedDeltaTime * delta);
 		}
 
@@ -54,8 +50,7 @@ namespace jKnepel.Katamari
 
 		private void OnTriggerEnter(Collider other)
 		{
-			Attachable att = other.GetComponent<Attachable>();
-			if (att == null)
+			if (!other.TryGetComponent<Attachable>(out var att))
 				return;
 
 			att.Attach(transform);
@@ -63,8 +58,7 @@ namespace jKnepel.Katamari
 
 		private void OnTriggerExit(Collider other)
 		{
-			Attachable att = other.GetComponent<Attachable>();
-			if (att == null)
+			if (!other.TryGetComponent<Attachable>(out var att))
 				return;
 
 			att.Detach();
