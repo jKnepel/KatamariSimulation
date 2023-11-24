@@ -32,6 +32,8 @@ namespace jKnepel.Katamari
 
 		private void Awake()
 		{
+			if (_rb == null)
+				_rb = GetComponent<Rigidbody>();
 			_material = Instantiate(_attachableMaterial);
 			_material.color = _restColor;
 			GetComponent<Renderer>().material = _material;

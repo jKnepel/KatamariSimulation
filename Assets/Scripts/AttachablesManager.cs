@@ -47,7 +47,7 @@ namespace jKnepel.Katamari
 			{
 				for (int j = 0; j < numberOfRows; j++)
 				{
-					if (i == numberOfColumns - 1 && j >= remainder)
+					if (remainder > 0 && i == numberOfColumns - 1 && j >= remainder)
 						return;
 
 					float x = startX + i * _spawnOffset;
@@ -58,7 +58,6 @@ namespace jKnepel.Katamari
 					_attachables[index++] = att;
 				}
 			}
-
 		}
 
 		private void FixedUpdate()

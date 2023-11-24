@@ -386,7 +386,7 @@ MonoBehaviour:
   _networkManager: {fileID: 215654682}
   _attachableParent: {fileID: 1107046141}
   _attachablePrefab: {fileID: 7763944478135559460, guid: c9e4ce01a59dd264aac859de8ec0b75c, type: 3}
-  _numberOfAttachables: 5
+  _numberOfAttachables: 100
   _spawnOffset: 1
   _tickRate: 64
   _attachables: []
