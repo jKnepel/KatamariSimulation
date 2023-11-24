@@ -62,10 +62,6 @@ namespace jKnepel.Katamari
 			_rb.AddForce(strength * Time.fixedDeltaTime * (_attachedTo.position - transform.position));
 		}
 
-		private void LateUpdate()
-		{
-		}
-
 		#endregion
 
 		#region public methods

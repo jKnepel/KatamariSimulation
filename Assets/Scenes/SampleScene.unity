@@ -385,7 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attachableParent: {fileID: 1107046141}
   _attachablePrefab: {fileID: 7763944478135559460, guid: c9e4ce01a59dd264aac859de8ec0b75c, type: 3}
-  _numberOfAttachables: 4
+  _numberOfAttachables: 8
   _spawnOffset: 1
 --- !u!4 &1107046141
 Transform:
@@ -424,11 +424,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2140932487166147222, guid: 087609de4a70ead4e8482c905b0bffb8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.84
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2140932487166147222, guid: 087609de4a70ead4e8482c905b0bffb8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -40.7
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 2140932487166147222, guid: 087609de4a70ead4e8482c905b0bffb8, type: 3}
       propertyPath: m_LocalRotation.w

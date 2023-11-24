@@ -16,11 +16,11 @@ namespace jKnepel.Katamari
 
 		#region lifecycle
 
-		private void OnEnable()
+		private void Awake()
 		{
 			int numberOfColumns = (int)Math.Ceiling(Mathf.Sqrt(_numberOfAttachables));
 			int numberOfRows = (int)Math.Ceiling((float)_numberOfAttachables / numberOfColumns);
-			int remainder = numberOfColumns * (numberOfRows - 1);
+			int remainder = _numberOfAttachables % numberOfRows;
 			float startX = -(((float)(numberOfColumns - 1)) / 2 * _spawnOffset);
 			float startZ = -(((float)(numberOfRows - 1)) / 2 * _spawnOffset);
 
@@ -29,7 +29,7 @@ namespace jKnepel.Katamari
 			{
 				for (int j = 0; j < numberOfRows; j++)
 				{
-					if (i == numberOfColumns - 1 && remainder + j >= _numberOfAttachables)
+					if (i == numberOfColumns - 1 && j >= remainder)
 						return;
 
 					float x = startX + i * _spawnOffset;
