@@ -1,6 +1,7 @@
 using jKnepel.SimpleUnityNetworking.Managing;
 using jKnepel.SimpleUnityNetworking.Networking;
 using jKnepel.SimpleUnityNetworking.Serialisation;
+using System;
 using UnityEngine;
 
 namespace jKnepel.Katamari
@@ -9,10 +10,19 @@ namespace jKnepel.Katamari
     {
 		#region attributes
 
-		[SerializeField] private NetworkManager		_networkManager;
-		[SerializeField] private AttachablesManager _attachablesManager;
-		[SerializeField] private Player				_player;
+		[Header("References")]
+		[SerializeField] private NetworkManager	_networkManager;
+		[SerializeField] private NetworkObject	_player;
+		[SerializeField] private Transform		_objectParent;
+		[SerializeField] private NetworkObject	_objectPrefab;
+
+		[Header("Values")]
+		[SerializeField] private int _numberOfObjects = 50;
+		[SerializeField] private float _spawnDistance = 2.0f;
 		[SerializeField] private int _tickRate = 64;
+
+		[Header("Additionals")]
+		[SerializeField] private NetworkObject[] _networkObjects;
 
 		private float _currentTime = 0;
 		private const string DATA_NAME = "Simulation";
@@ -23,11 +33,13 @@ namespace jKnepel.Katamari
 
 		private void Awake()
 		{
-			if (_networkManager == null)
-				_networkManager = GameObject.FindWithTag("NetworkManager").GetComponent<NetworkManager>();
+			if (_objectParent == null)
+				_objectParent = transform;
 
 			_networkManager.OnConnected += () => _networkManager.RegisterByteData(DATA_NAME, UpdateSimulation);
 			_networkManager.OnDisconnected += () => _networkManager.UnregisterByteData(DATA_NAME, UpdateSimulation);
+
+			SetupSimulation();
 		}
 
 		private void FixedUpdate()
@@ -47,32 +59,53 @@ namespace jKnepel.Katamari
 
 		#region private methods
 
+		private void SetupSimulation()
+		{
+			_networkObjects = new NetworkObject[_numberOfObjects];
+			int numberOfColumns = (int)Math.Ceiling(Mathf.Sqrt(_numberOfObjects));
+			int numberOfRows = (int)Math.Ceiling((float)_numberOfObjects / numberOfColumns);
+			int remainder = _numberOfObjects % numberOfRows;
+			float startX = -(((float)(numberOfColumns - 1)) / 2 * _spawnDistance);
+			float startZ = -(((float)(numberOfRows - 1)) / 2 * _spawnDistance);
+
+			int index = 0;
+			for (int i = 0; i < numberOfColumns; i++)
+			{
+				for (int j = 0; j < numberOfRows; j++)
+				{
+					if (remainder > 0 && i == numberOfColumns - 1 && j >= remainder)
+						return;
+
+					float x = startX + i * _spawnDistance;
+					float z = startZ + j * _spawnDistance;
+					Vector3 position = new(x, _objectPrefab.transform.position.y, z);
+					NetworkObject obj = Instantiate(_objectPrefab, position, _objectPrefab.transform.rotation, _objectParent);
+					obj.gameObject.name = $"Object#{index}";
+					_networkObjects[index++] = obj;
+				}
+			}
+		}
+
 		private void SendSimulation()
 		{
-			BitWriter _bitWriter = new(_networkManager.NetworkConfiguration.SerialiserConfiguration);
-			PlayerData.WritePlayerData(_bitWriter, new(_player));
-			foreach (Attachable att in _attachablesManager.Attachables)
-				AttachableData.WriteAttachableData(_bitWriter, new(att));
+			BitWriter writer = new(_networkManager.NetworkConfiguration.SerialiserConfiguration);
+			NetworkObjectData.WriteNetworkObjectData(writer, _player.GetData());
+			foreach (NetworkObject obj in _networkObjects)
+				NetworkObjectData.WriteNetworkObjectData(writer, obj.GetData());
 
-			_networkManager.SendByteDataToAll(DATA_NAME, _bitWriter.GetBuffer(), ENetworkChannel.ReliableOrdered);
+			_networkManager.SendByteDataToAll(DATA_NAME, writer.GetBuffer(), ENetworkChannel.ReliableOrdered);
 		}
 
 		private void UpdateSimulation(byte sender, byte[] data)
 		{
 			BitReader reader = new(data, _networkManager.NetworkConfiguration.SerialiserConfiguration);
-			PlayerData playerData = PlayerData.ReadPlayerData(reader);
-			_player.Rigidbody.position = playerData.Position;
-			_player.Rigidbody.rotation = playerData.Rotation;
-			_player.Rigidbody.velocity = playerData.LinearVelocity;
-			_player.Rigidbody.angularVelocity = playerData.AngularVelocity;
+			NetworkObjectData playerData = NetworkObjectData.ReadNetworkObjectData(reader);
+			_player.SetData(playerData);
 
-			foreach (Attachable att in _attachablesManager.Attachables)
+			foreach (NetworkObject obj in _networkObjects)
 			{
-				AttachableData attData = AttachableData.ReadAttachableData(reader);
-				att.Rigidbody.position = attData.Position;
-				att.Rigidbody.rotation = attData.Rotation;
-				att.Rigidbody.velocity = attData.LinearVelocity;
-				att.Rigidbody.angularVelocity = attData.AngularVelocity;
+				NetworkObjectData objData = NetworkObjectData.ReadNetworkObjectData(reader);
+				obj.SetData(objData);
 			}
 		}
 

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7763944478135559480}
   - component: {fileID: 7763944478135559461}
   - component: {fileID: 7763944478135559460}
+  - component: {fileID: 4413351279911025955}
   m_Layer: 0
   m_Name: AttachableCube
   m_TagString: Untagged
@@ -146,11 +147,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34406433882eedf4caf203c556af1673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _networkManager: {fileID: 0}
   _rb: {fileID: 7763944478135559461}
   _attachableMaterial: {fileID: 2100000, guid: 5bdf56e7229467c46a85e61459cebd93, type: 2}
   _restColor: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
   _activeColor: {r: 1, g: 0.06132078, b: 0.06132078, a: 1}
-  _velocityDeadzone: 1.5
   _gravitationalPull: 3000
-  _isAttached: 0
+  _fadeDuration: 3
+--- !u!114 &4413351279911025955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7763944478135559487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b47d1ff4f0c71e4493ac64ee49383f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rb: {fileID: 7763944478135559461}
+  _velocityDeadzone: 1.5
