@@ -436,10 +436,10 @@ MonoBehaviour:
   _player: {fileID: 1670022309}
   _objectParent: {fileID: 1663676916}
   _objectPrefab: {fileID: 4413351279911025955, guid: c9e4ce01a59dd264aac859de8ec0b75c, type: 3}
-  _numberOfObjects: 50
+  _numberOfObjects: 150
   _spawnDistance: 1
-  _tickRate: 10
-  _networkObjects: []
+  _tickRate: 64
+  _maxNumberBytes: 1150
 --- !u!1001 &1670022308
 PrefabInstance:
   m_ObjectHideFlags: 0

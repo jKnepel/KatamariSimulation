@@ -6,10 +6,19 @@ namespace jKnepel.Katamari
 	[RequireComponent(typeof(Rigidbody))]
 	public class NetworkObject : MonoBehaviour
 	{
+		#region attributes
+
 		[SerializeField] private Rigidbody _rb;
 		[SerializeField] private float _velocityDeadzone = 1.5f;
 
-		private bool _atRest = true;
+		public float PriorityAccumulator => _priorityAccumulator;
+		private float _priorityAccumulator = 0;
+		public float Priority => _priority;
+		private float _priority = 0.1f;
+
+		#endregion
+
+		#region lifecycle
 
 		private void Awake()
 		{
@@ -19,15 +28,12 @@ namespace jKnepel.Katamari
 
 		private void FixedUpdate()
 		{
-			if (_atRest && (_rb.velocity.magnitude > _velocityDeadzone || _rb.angularVelocity.magnitude > _velocityDeadzone))
-			{
-				_atRest = false;
-			}
-			else if (!_atRest && (_rb.velocity.magnitude <= _velocityDeadzone || _rb.angularVelocity.magnitude <= _velocityDeadzone))
-			{
-				_atRest = true;
-			}
+			_priorityAccumulator += _priority;
 		}
+
+		#endregion
+
+		#region public methods
 
 		public NetworkObjectData GetData()
 		{
@@ -35,7 +41,8 @@ namespace jKnepel.Katamari
 			{
 				Position = _rb.position,
 				Rotation = _rb.rotation,
-				AtRest = _atRest,
+				AtRest = _rb.velocity.magnitude < _velocityDeadzone 
+					  || _rb.angularVelocity.magnitude < _velocityDeadzone,
 				LinearVelocity = _rb.velocity,
 				AngularVelocity = _rb.angularVelocity
 			};
@@ -48,6 +55,16 @@ namespace jKnepel.Katamari
 			_rb.velocity = data.LinearVelocity;
 			_rb.angularVelocity = data.AngularVelocity;
 		}
+
+		public void ResetPriority() => _priorityAccumulator = 0;
+
+		public int CompareTo(NetworkObject other)
+		{
+			if (other == null) return 1;
+			return PriorityAccumulator.CompareTo(other.PriorityAccumulator);
+		}
+
+		#endregion
 	}
 
 	public struct NetworkObjectData

@@ -2,6 +2,7 @@ using jKnepel.SimpleUnityNetworking.Managing;
 using jKnepel.SimpleUnityNetworking.Networking;
 using jKnepel.SimpleUnityNetworking.Serialisation;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace jKnepel.Katamari
@@ -20,9 +21,10 @@ namespace jKnepel.Katamari
 		[SerializeField] private int _numberOfObjects = 50;
 		[SerializeField] private float _spawnDistance = 2.0f;
 		[SerializeField] private int _tickRate = 64;
+		[SerializeField] private int _maxNumberBytes = 1150;
 
-		[Header("Additionals")]
-		[SerializeField] private NetworkObject[] _networkObjects;
+		private NetworkObject[] _networkObjects;
+		private readonly List<(ushort, NetworkObject)> _networkObjectsList = new();
 
 		private float _currentTime = 0;
 		private const string DATA_NAME = "Simulation";
@@ -36,8 +38,8 @@ namespace jKnepel.Katamari
 			if (_objectParent == null)
 				_objectParent = transform;
 
-			_networkManager.OnConnected += () => _networkManager.RegisterByteData(DATA_NAME, UpdateSimulation);
-			_networkManager.OnDisconnected += () => _networkManager.UnregisterByteData(DATA_NAME, UpdateSimulation);
+			_networkManager.OnConnected += () => _networkManager.RegisterByteData(DATA_NAME, UpdateSimulationAccumulator);
+			_networkManager.OnDisconnected += () => _networkManager.UnregisterByteData(DATA_NAME, UpdateSimulationAccumulator);
 
 			SetupSimulation();
 		}
@@ -49,7 +51,7 @@ namespace jKnepel.Katamari
 
 			if (_currentTime > 1 / (float)_tickRate)
 			{
-				SendSimulation();
+				SendSimulationAccumulator();
 				_currentTime = 0;
 			}
 			_currentTime += Time.deltaTime;
@@ -66,7 +68,7 @@ namespace jKnepel.Katamari
 			int numberOfRows = (int)Math.Ceiling((float)_numberOfObjects / numberOfColumns);
 			int remainder = _numberOfObjects % numberOfRows;
 			float startX = -(((float)(numberOfColumns - 1)) / 2 * _spawnDistance);
-			float startZ = -(((float)(numberOfRows - 1)) / 2 * _spawnDistance);
+			float startZ = -(((float)(numberOfRows    - 1)) / 2 * _spawnDistance);
 
 			int index = 0;
 			for (int i = 0; i < numberOfColumns; i++)
@@ -81,10 +83,13 @@ namespace jKnepel.Katamari
 					Vector3 position = new(x, _objectPrefab.transform.position.y, z);
 					NetworkObject obj = Instantiate(_objectPrefab, position, _objectPrefab.transform.rotation, _objectParent);
 					obj.gameObject.name = $"Object#{index}";
+					_networkObjectsList.Add(((ushort)index, obj));
 					_networkObjects[index++] = obj;
 				}
 			}
 		}
+
+		#region version 1
 
 		private void SendSimulation()
 		{
@@ -108,6 +113,42 @@ namespace jKnepel.Katamari
 				obj.SetData(objData);
 			}
 		}
+
+		#endregion
+
+		#region version 2
+
+		private void SendSimulationAccumulator()
+		{
+			_networkObjectsList.Sort((a, b) => a.Item2.CompareTo(b.Item2));
+			BitWriter writer = new(_networkManager.NetworkConfiguration.SerialiserConfiguration);
+			NetworkObjectData.WriteNetworkObjectData(writer, _player.GetData());
+			foreach ((ushort, NetworkObject) obj in _networkObjectsList)
+			{
+				writer.WriteUInt16(obj.Item1);
+				NetworkObjectData.WriteNetworkObjectData(writer, obj.Item2.GetData());
+				obj.Item2.ResetPriority();
+				if (writer.ByteLength >= _maxNumberBytes) break;
+			}
+
+			_networkManager.SendByteDataToAll(DATA_NAME, writer.GetBuffer(), ENetworkChannel.ReliableOrdered);
+		}
+
+		private void UpdateSimulationAccumulator(byte sender, byte[] data)
+		{
+			BitReader reader = new(data, _networkManager.NetworkConfiguration.SerialiserConfiguration);
+			NetworkObjectData playerData = NetworkObjectData.ReadNetworkObjectData(reader);
+			_player.SetData(playerData);
+
+			while (reader.Remaining / 8 > 0)
+			{
+				int index = reader.ReadUInt16();
+				NetworkObjectData objData = NetworkObjectData.ReadNetworkObjectData(reader);
+				_networkObjects[index].SetData(objData);
+			}
+		}
+
+		#endregion
 
 		#endregion
 	}
