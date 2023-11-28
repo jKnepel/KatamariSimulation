@@ -9,7 +9,6 @@ namespace jKnepel.Katamari
 		#region attributes
 
 		[SerializeField] private Rigidbody _rb;
-		[SerializeField] private float _velocityDeadzone = 1.5f;
 
 		public float PriorityAccumulator => _priorityAccumulator;
 		private float _priorityAccumulator = 0;
@@ -41,8 +40,7 @@ namespace jKnepel.Katamari
 			{
 				Position = _rb.position,
 				Rotation = _rb.rotation,
-				AtRest = _rb.velocity.magnitude < _velocityDeadzone 
-					  || _rb.angularVelocity.magnitude < _velocityDeadzone,
+				AtRest = _rb.IsSleeping(),
 				LinearVelocity = _rb.velocity,
 				AngularVelocity = _rb.angularVelocity
 			};
