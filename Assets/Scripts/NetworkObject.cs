@@ -61,7 +61,9 @@ namespace jKnepel.Katamari
 		public int CompareTo(NetworkObject other)
 		{
 			if (other == null) return 1;
-			return PriorityAccumulator.CompareTo(other.PriorityAccumulator);
+			if (PriorityAccumulator == other.PriorityAccumulator) return 0;
+			if (PriorityAccumulator < other.PriorityAccumulator) return 1;
+			return -1;
 		}
 
 		#endregion
