@@ -38,10 +38,9 @@ namespace jKnepel.Katamari
 			if (_objectParent == null)
 				_objectParent = transform;
 
+			SetupSimulation();
 			_networkManager.OnConnected += () => _networkManager.RegisterByteData(DATA_NAME, UpdateSimulationAccumulator);
 			_networkManager.OnDisconnected += () => _networkManager.UnregisterByteData(DATA_NAME, UpdateSimulationAccumulator);
-
-			SetupSimulation();
 		}
 
 		private void FixedUpdate()
@@ -123,13 +122,21 @@ namespace jKnepel.Katamari
 			_networkObjectsList.Sort((a, b) => a.Item2.CompareTo(b.Item2));
 			BitWriter writer = new(_networkManager.NetworkConfiguration.SerialiserConfiguration);
 			NetworkObjectData.WriteNetworkObjectData(writer, _player.GetData());
+			int numberPosition = writer.Position;
+			writer.Skip(writer.Int16);
+
+			ushort numberOfObjects = 0;
 			foreach ((ushort, NetworkObject) obj in _networkObjectsList)
 			{
 				writer.WriteUInt16(obj.Item1);
 				NetworkObjectData.WriteNetworkObjectData(writer, obj.Item2.GetData());
 				obj.Item2.ResetPriority();
+				numberOfObjects++;
 				if (writer.ByteLength >= _maxNumberBytes) break;
 			}
+
+			writer.Position = numberPosition;
+			writer.WriteUInt16(numberOfObjects);
 
 			_networkManager.SendByteDataToAll(DATA_NAME, writer.GetBuffer(), ENetworkChannel.ReliableOrdered);
 		}
@@ -140,7 +147,8 @@ namespace jKnepel.Katamari
 			NetworkObjectData playerData = NetworkObjectData.ReadNetworkObjectData(reader);
 			_player.SetData(playerData);
 
-			while (reader.Remaining / 8 > 0)
+			ushort numberOfObjects = reader.ReadUInt16();
+			for (ushort i = 0; i < numberOfObjects; i++)
 			{
 				int index = reader.ReadUInt16();
 				NetworkObjectData objData = NetworkObjectData.ReadNetworkObjectData(reader);

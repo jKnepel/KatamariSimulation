@@ -52,6 +52,8 @@ namespace jKnepel.Katamari
 		{
 			_rb.position = data.Position;
 			_rb.rotation = data.Rotation;
+			if (data.AtRest)
+				return;
 			_rb.velocity = data.LinearVelocity;
 			_rb.angularVelocity = data.AngularVelocity;
 		}
