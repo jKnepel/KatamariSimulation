@@ -34,6 +34,8 @@ namespace jKnepel.Katamari
 
 #if CALCULATE_BANDWIDTH
 		private int _sendBytes = 0;
+		private int _sendBytesTotal = 0;
+		private int _secondCount = 1;
 		private float _frameTime = 0;
 #endif
 
@@ -71,10 +73,14 @@ namespace jKnepel.Katamari
 			_frameTime += Time.deltaTime;
 			if (_frameTime > 1)
 			{
-				Debug.Log($"Send Bytes: {_sendBytes}Bps {((float)_sendBytes/1024)}MBps");
+				Debug.Log($"Byte Information:\n"
+				 + $"Bytes This Second: {_sendBytes}B\n"
+				 + $"Bytes Total: {_sendBytesTotal}B\n"
+				 + $"Bytes Per Second: {(float)_sendBytes/_secondCount/1024}kBps\n");
 
 				_frameTime = 0;
 				_sendBytes = 0;
+				_secondCount++;
 			}
 		}
 #endif
@@ -141,6 +147,7 @@ namespace jKnepel.Katamari
 
 #if CALCULATE_BANDWIDTH
 			_sendBytes += writer.ByteLength;
+			_sendBytesTotal += writer.ByteLength;
 #endif
 		}
 
