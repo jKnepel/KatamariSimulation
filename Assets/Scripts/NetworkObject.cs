@@ -41,7 +41,7 @@ namespace jKnepel.Katamari
 
 			if (_frameNumber >= _forceRestAtFrame)
 			{
-				if (_deltaState.magnitude < _forceRestThreshold)
+				if (_deltaState.magnitude / _forceRestAtFrame < _forceRestThreshold)
 				{
 					_rb.velocity = Vector3.zero;
 					_rb.angularVelocity = Vector3.zero;

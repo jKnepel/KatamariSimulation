@@ -187,4 +187,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 2140932487166147210}
-  _velocityDeadzone: 1.5
+  _forceRestAtFrame: 16
+  _forceRestThreshold: 0.5
