@@ -1,3 +1,5 @@
+#define USE_ACCUMULATOR
+
 using jKnepel.SimpleUnityNetworking.Managing;
 using jKnepel.SimpleUnityNetworking.Networking;
 using jKnepel.SimpleUnityNetworking.Serialisation;
@@ -39,8 +41,13 @@ namespace jKnepel.Katamari
 				_objectParent = transform;
 
 			SetupSimulation();
+#if USE_ACCUMULATOR
 			_networkManager.OnConnected += () => _networkManager.RegisterByteData(DATA_NAME, UpdateSimulationAccumulator);
 			_networkManager.OnDisconnected += () => _networkManager.UnregisterByteData(DATA_NAME, UpdateSimulationAccumulator);
+#else
+			_networkManager.OnConnected += () => _networkManager.RegisterByteData(DATA_NAME, UpdateSimulationAll);
+			_networkManager.OnDisconnected += () => _networkManager.UnregisterByteData(DATA_NAME, UpdateSimulationAll);
+#endif
 		}
 
 		private void FixedUpdate()
@@ -50,7 +57,11 @@ namespace jKnepel.Katamari
 
 			if (_currentTime > 1 / (float)_tickRate)
 			{
+#if USE_ACCUMULATOR
 				SendSimulationAccumulator();
+#else
+				SendSimulationAll();
+#endif
 				_currentTime = 0;
 			}
 			_currentTime += Time.deltaTime;
@@ -88,35 +99,7 @@ namespace jKnepel.Katamari
 			}
 		}
 
-		#region version 1
-
-		private void SendSimulation()
-		{
-			BitWriter writer = new(_networkManager.NetworkConfiguration.SerialiserConfiguration);
-			NetworkObjectData.WriteNetworkObjectData(writer, _player.GetData());
-			foreach (NetworkObject obj in _networkObjects)
-				NetworkObjectData.WriteNetworkObjectData(writer, obj.GetData());
-
-			_networkManager.SendByteDataToAll(DATA_NAME, writer.GetBuffer(), ENetworkChannel.ReliableOrdered);
-		}
-
-		private void UpdateSimulation(byte sender, byte[] data)
-		{
-			BitReader reader = new(data, _networkManager.NetworkConfiguration.SerialiserConfiguration);
-			NetworkObjectData playerData = NetworkObjectData.ReadNetworkObjectData(reader);
-			_player.SetData(playerData);
-
-			foreach (NetworkObject obj in _networkObjects)
-			{
-				NetworkObjectData objData = NetworkObjectData.ReadNetworkObjectData(reader);
-				obj.SetData(objData);
-			}
-		}
-
-		#endregion
-
-		#region version 2
-
+#if USE_ACCUMULATOR
 		private void SendSimulationAccumulator()
 		{
 			_networkObjectsList.Sort((a, b) => a.Item2.CompareTo(b.Item2));
@@ -159,8 +142,30 @@ namespace jKnepel.Katamari
 				_networkObjects[index].SetData(objData);
 			}
 		}
+#else
+		private void SendSimulationAll()
+		{
+			BitWriter writer = new(_networkManager.NetworkConfiguration.SerialiserConfiguration);
+			NetworkObjectData.WriteNetworkObjectData(writer, _player.GetData());
+			foreach (NetworkObject obj in _networkObjects)
+				NetworkObjectData.WriteNetworkObjectData(writer, obj.GetData());
 
-		#endregion
+			_networkManager.SendByteDataToAll(DATA_NAME, writer.GetBuffer(), ENetworkChannel.ReliableOrdered);
+		}
+
+		private void UpdateSimulationAll(byte sender, byte[] data)
+		{
+			BitReader reader = new(data, _networkManager.NetworkConfiguration.SerialiserConfiguration);
+			NetworkObjectData playerData = NetworkObjectData.ReadNetworkObjectData(reader);
+			_player.SetData(playerData);
+
+			foreach (NetworkObject obj in _networkObjects)
+			{
+				NetworkObjectData objData = NetworkObjectData.ReadNetworkObjectData(reader);
+				obj.SetData(objData);
+			}
+		}
+#endif
 
 		#endregion
 	}
