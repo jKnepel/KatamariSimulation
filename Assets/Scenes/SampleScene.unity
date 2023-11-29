@@ -438,7 +438,7 @@ MonoBehaviour:
   _objectPrefab: {fileID: 4413351279911025955, guid: c9e4ce01a59dd264aac859de8ec0b75c, type: 3}
   _numberOfObjects: 150
   _spawnDistance: 1
-  _tickRate: 64
+  _tickRate: 10
   _maxNumberBytes: 1150
 --- !u!1001 &1670022308
 PrefabInstance:
