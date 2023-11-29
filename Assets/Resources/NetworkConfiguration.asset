@@ -29,7 +29,7 @@ MonoBehaviour:
     _floatMaxValue: 1000
     _floatResolution: 0.001
     _compressQuaternions: 1
-    _bitsPerComponent: 9
+    _bitsPerComponent: 10
   _discoveryIP: 239.240.240.149
   _discoveryPort: 26824
   _showDebugMessages: 1
