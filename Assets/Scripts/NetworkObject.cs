@@ -9,11 +9,18 @@ namespace jKnepel.Katamari
 		#region attributes
 
 		[SerializeField] private Rigidbody _rb;
+		[SerializeField] private int _forceRestAtFrame = 16;
+		[SerializeField] private float _forceRestThreshold = 0.3f;
 
 		public float PriorityAccumulator => _priorityAccumulator;
 		private float _priorityAccumulator = 0;
 		public float Priority => _priority;
 		private float _priority = 0.1f;
+
+		private int _frameNumber = 0;
+		private Vector3 _lastPosition = Vector3.zero;
+		private Vector3 _lastRotation = Vector3.zero;
+		private Vector3 _deltaState = Vector3.zero;
 
 		#endregion
 
@@ -28,6 +35,25 @@ namespace jKnepel.Katamari
 		private void FixedUpdate()
 		{
 			_priorityAccumulator += _priority;
+			_frameNumber++;
+			_deltaState += _rb.position - _lastPosition;
+			_deltaState += _rb.rotation.eulerAngles - _lastRotation;
+
+			if (_frameNumber >= _forceRestAtFrame)
+			{
+				if (_deltaState.magnitude < _forceRestThreshold)
+				{
+					_rb.velocity = Vector3.zero;
+					_rb.angularVelocity = Vector3.zero;
+					_rb.Sleep();
+				}
+
+				_frameNumber = 0;
+				_deltaState = Vector3.zero;
+			}
+
+			_lastPosition = _rb.position;
+			_lastRotation = _rb.rotation.eulerAngles;
 		}
 
 		#endregion
