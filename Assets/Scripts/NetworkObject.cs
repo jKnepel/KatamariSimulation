@@ -10,6 +10,7 @@ namespace jKnepel.Katamari
 
 		[SerializeField] private Rigidbody _rb;
 		[SerializeField] private int _forceRestAtFrame = 16;
+		[SerializeField] private float _sleepThreshold = 0.5f;
 		[SerializeField] private float _forceRestThreshold = 0.3f;
 
 		public float PriorityAccumulator => _priorityAccumulator;
@@ -62,11 +63,14 @@ namespace jKnepel.Katamari
 
 		public NetworkObjectData GetData()
 		{
+			float kineticEnergy =   Mathf.Pow(_rb.velocity.magnitude, 2) * 0.5f;
+			kineticEnergy += Mathf.Pow(_rb.angularVelocity.magnitude, 2) * 0.5f;
+
 			return new()
 			{
 				Position = _rb.position,
 				Rotation = _rb.rotation,
-				AtRest = _rb.IsSleeping(),
+				AtRest = kineticEnergy < _sleepThreshold,
 				LinearVelocity = _rb.velocity,
 				AngularVelocity = _rb.angularVelocity
 			};
