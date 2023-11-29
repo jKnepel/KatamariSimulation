@@ -34,10 +34,14 @@ namespace jKnepel.Katamari
 
 		private void FixedUpdate()
 		{
-			_priorityAccumulator += _priority;
 			_frameNumber++;
 			_deltaState += _rb.position - _lastPosition;
 			_deltaState += _rb.rotation.eulerAngles - _lastRotation;
+			_lastPosition = _rb.position;
+			_lastRotation = _rb.rotation.eulerAngles;
+
+			_priority = _rb.velocity.magnitude + _rb.angularVelocity.magnitude + _deltaState.magnitude;
+			_priorityAccumulator += _priority;
 
 			if (_frameNumber >= _forceRestAtFrame)
 			{
@@ -50,9 +54,6 @@ namespace jKnepel.Katamari
 				_frameNumber = 0;
 				_deltaState = Vector3.zero;
 			}
-
-			_lastPosition = _rb.position;
-			_lastRotation = _rb.rotation.eulerAngles;
 		}
 
 		#endregion

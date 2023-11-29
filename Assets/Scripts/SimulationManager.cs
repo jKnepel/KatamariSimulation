@@ -128,10 +128,14 @@ namespace jKnepel.Katamari
 			ushort numberOfObjects = 0;
 			foreach ((ushort, NetworkObject) obj in _networkObjectsList)
 			{
+				if (obj.Item2.PriorityAccumulator < 0)
+					continue;
+
 				writer.WriteUInt16(obj.Item1);
 				NetworkObjectData.WriteNetworkObjectData(writer, obj.Item2.GetData());
 				obj.Item2.ResetPriority();
 				numberOfObjects++;
+
 				if (writer.ByteLength >= _maxNumberBytes) break;
 			}
 
