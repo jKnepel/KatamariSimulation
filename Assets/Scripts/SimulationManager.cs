@@ -59,7 +59,7 @@ namespace jKnepel.Katamari
 			if (!_networkManager.IsHost)
 				return;
 
-			if (_currentTime > 1 / (float)_tickRate)
+			if (_currentTime > 1f / _tickRate)
 			{
 				SendSimulation();
 				_currentTime = 0;
