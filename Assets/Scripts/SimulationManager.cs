@@ -128,7 +128,6 @@ namespace jKnepel.Katamari
 		{
 			_networkObjectsList.Sort((a, b) => a.Item2.CompareTo(b.Item2));
 			BitWriter writer = new(_networkManager.NetworkConfiguration.SerialiserConfiguration);
-			//NetworkObjectState.WriteNetworkObjectState(writer, _player.GetState());
 			int numberPosition = writer.Position;
 			writer.Skip(writer.Int16);
 
@@ -163,8 +162,6 @@ namespace jKnepel.Katamari
 		private void UpdateSimulation(byte sender, byte[] data)
 		{
 			BitReader reader = new(data, _networkManager.NetworkConfiguration.SerialiserConfiguration);
-			//NetworkObjectState playerData = NetworkObjectState.ReadNetworkObjectState(reader);
-			//_player.SetState(playerData);
 
 			ushort numberOfObjects = reader.ReadUInt16();
 			for (ushort i = 0; i < numberOfObjects; i++)

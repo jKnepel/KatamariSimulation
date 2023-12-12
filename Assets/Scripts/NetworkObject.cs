@@ -4,7 +4,6 @@ using jKnepel.SimpleUnityNetworking.Managing;
 using jKnepel.SimpleUnityNetworking.Serialisation;
 using jKnepel.SimpleUnityNetworking.SyncDataTypes;
 using System;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 namespace jKnepel.Katamari
@@ -24,7 +23,6 @@ namespace jKnepel.Katamari
 		private Material _materialInstance;
 #endif
 
-		private float KineticEnergy => Mathf.Pow(_rb.velocity.magnitude, 2) * 0.5f + Mathf.Pow(_rb.angularVelocity.magnitude, 2) * 0.5f;
 		private byte ClientID => _networkManager.ClientInformation?.ID ?? 0;
 		public bool IsAuthor => _networkManager.IsConnected && _authorityID == ClientID;
 		public bool IsOwner => _networkManager.IsConnected && _ownershipID == ClientID;
@@ -89,7 +87,8 @@ namespace jKnepel.Katamari
 			_priorityAccumulator += _priority;
 			
 			_frameNumber++;
-			_stillAtRest = KineticEnergy < _restThreshold;
+			float kineticEnergy = Mathf.Pow(_rb.velocity.magnitude, 2) * 0.5f + Mathf.Pow(_rb.angularVelocity.magnitude, 2) * 0.5f;
+			_stillAtRest = kineticEnergy < _restThreshold;
 
 			if (!_stillAtRest)
 			{
