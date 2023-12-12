@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2140932487166147216}
   - component: {fileID: 2140932487166147210}
   - component: {fileID: 2140932487166147211}
-  - component: {fileID: 7990286822043992704}
   m_Layer: 0
   m_Name: SpherePlayer
   m_TagString: Untagged
@@ -174,20 +173,3 @@ MonoBehaviour:
   _camera: {fileID: 0}
   _cameraOffset: {x: 0, y: 3, z: -7}
   _forceMult: 1000000
---- !u!114 &7990286822043992704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2140932487166147208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b47d1ff4f0c71e4493ac64ee49383f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _networkManager: {fileID: 0}
-  _rb: {fileID: 2140932487166147210}
-  _forceRestAfterFrames: 16
-  _restThreshold: 0.5
-  _material: {fileID: 2100000, guid: 5bdf56e7229467c46a85e61459cebd93, type: 2}

@@ -105,6 +105,13 @@ namespace jKnepel.Katamari
 			}
 		}
 
+		private void OnCollisionEnter(Collision collision)
+		{
+			if (collision == null || !IsAuthor) return;
+			if (!collision.gameObject.TryGetComponent<NetworkObject>(out var obj)) return;
+			obj.TakeAuthority();
+		}
+
 		#endregion
 
 		#region public methods
