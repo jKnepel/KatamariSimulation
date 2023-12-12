@@ -15,7 +15,7 @@ MonoBehaviour:
   _username: Username
   _color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4279762225
   _allowVirtualIPs: 0
   _mtu: 1200
   _rtt: 200

@@ -439,7 +439,7 @@ MonoBehaviour:
   _numberOfObjects: 1500
   _spawnDistance: 1
   _tickRate: 10
-  _maxNumberBytes: 1150
+  _maxNumberBytes: 2000
 --- !u!1001 &1670022308
 PrefabInstance:
   m_ObjectHideFlags: 0

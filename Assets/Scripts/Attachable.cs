@@ -13,6 +13,7 @@ namespace jKnepel.Katamari
 		private Material _material;
 		private float _maxDistance = 0;
 
+		[SerializeField] private NetworkObject _networkObject;
 		[SerializeField] private Rigidbody _rb;
 		[SerializeField] private Material _attachableMaterial;
 		[SerializeField] private Color _restColor = new(0.8f, 0.8f, 0.8f);
@@ -28,6 +29,8 @@ namespace jKnepel.Katamari
 
 		private void Awake()
 		{
+			if (_networkObject == null)
+				_networkObject = GetComponent<NetworkObject>();
 			if (_rb == null)
 				_rb = GetComponent<Rigidbody>();
 			_material = Instantiate(_attachableMaterial);
@@ -54,6 +57,14 @@ namespace jKnepel.Katamari
 			if (IsAttached)
 				return;
 
+			_networkObject.TakeOwnership((success) => Attach(success, transform));
+		}
+
+		private void Attach(bool success, Transform transform)
+		{
+			if (!success || IsAttached)
+				return;
+
 			IsAttached = true;
 			_attachedTo = transform;
 			_maxDistance = transform.GetComponents<Collider>().First(x => x.isTrigger).bounds.size.x;
@@ -65,6 +76,7 @@ namespace jKnepel.Katamari
 			if (!IsAttached)
 				return;
 
+			_networkObject.ReleaseOwnership();
 			IsAttached = false;
 			_attachedTo = null;
 			_maxDistance = 0;

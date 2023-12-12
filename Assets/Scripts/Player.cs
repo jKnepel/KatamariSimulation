@@ -31,16 +31,8 @@ namespace jKnepel.Katamari
 				_camera = Camera.main;
 
 			_input = new();
-			_networkManager.OnConnected += () =>
-			{
-				if (_networkManager.IsHost)
-					_input.Enable();
-			};
-			_networkManager.OnDisconnected += () =>
-			{
-				if (_networkManager.IsHost)
-					_input.Disable();
-			};
+			_networkManager.OnConnected += _input.Enable;
+			_networkManager.OnDisconnected += _input.Disable;
 		}
 
 		private void FixedUpdate()

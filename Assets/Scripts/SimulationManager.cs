@@ -1,5 +1,4 @@
-#define USE_ACCUMULATOR
-#undef CALCULATE_BANDWIDTH
+#undef DEBUG_BANDWIDTH
 
 using jKnepel.SimpleUnityNetworking.Managing;
 using jKnepel.SimpleUnityNetworking.Networking;
@@ -32,7 +31,7 @@ namespace jKnepel.Katamari
 		private float _currentTime = 0;
 		private const string DATA_NAME = "Simulation";
 
-#if CALCULATE_BANDWIDTH
+#if DEBUG_BANDWIDTH
 		private int _sendBytes = 0;
 		private int _sendBytesTotal = 0;
 		private int _secondCount = 1;
@@ -49,15 +48,22 @@ namespace jKnepel.Katamari
 				_objectParent = transform;
 
 			SetupSimulation();
+			
+			if (_networkManager.IsConnected)
+				_networkManager.RegisterByteData(DATA_NAME, UpdateSimulation);
+			else
+				_networkManager.OnConnected += () => _networkManager.RegisterByteData(DATA_NAME, UpdateSimulation);
+		}
 
-			_networkManager.OnConnected += () => _networkManager.RegisterByteData(DATA_NAME, UpdateSimulation);
-			_networkManager.OnDisconnected += () => _networkManager.UnregisterByteData(DATA_NAME, UpdateSimulation);
+		private void OnDisable()
+		{
+			if (_networkManager.IsConnected)
+				_networkManager.UnregisterByteData(DATA_NAME, UpdateSimulation);
 		}
 
 		private void FixedUpdate()
 		{
-			if (!_networkManager.IsHost)
-				return;
+			if (!_networkManager.IsConnected) return;
 
 			if (_currentTime > 1f / _tickRate)
 			{
@@ -67,7 +73,7 @@ namespace jKnepel.Katamari
 			_currentTime += Time.deltaTime;
 		}
 
-#if CALCULATE_BANDWIDTH
+#if DEBUG_BANDWIDTH
 		private void Update()
 		{
 			_frameTime += Time.deltaTime;
@@ -111,29 +117,29 @@ namespace jKnepel.Katamari
 					Vector3 position = new(x, _objectPrefab.transform.position.y, z);
 					NetworkObject obj = Instantiate(_objectPrefab, position, _objectPrefab.transform.rotation, _objectParent);
 					obj.gameObject.name = $"Object#{index}";
+					obj.gameObject.SetActive(true);
 					_networkObjectsList.Add(((ushort)index, obj));
 					_networkObjects[index++] = obj;
 				}
 			}
 		}
 
-#if USE_ACCUMULATOR
 		private void SendSimulation()
 		{
 			_networkObjectsList.Sort((a, b) => a.Item2.CompareTo(b.Item2));
 			BitWriter writer = new(_networkManager.NetworkConfiguration.SerialiserConfiguration);
-			NetworkObjectData.WriteNetworkObjectData(writer, _player.GetData());
+			//NetworkObjectState.WriteNetworkObjectState(writer, _player.GetState());
 			int numberPosition = writer.Position;
 			writer.Skip(writer.Int16);
 
 			ushort numberOfObjects = 0;
 			foreach ((ushort, NetworkObject) obj in _networkObjectsList)
 			{
-				if (obj.Item2.PriorityAccumulator < 0)
+				if (obj.Item2.PriorityAccumulator < 0 || !obj.Item2.IsResponsible)
 					continue;
 
 				writer.WriteUInt16(obj.Item1);
-				NetworkObjectData.WriteNetworkObjectData(writer, obj.Item2.GetData());
+				NetworkObjectState.WriteNetworkObjectState(writer, obj.Item2.GetState());
 				obj.Item2.ResetPriority();
 				numberOfObjects++;
 
@@ -143,9 +149,12 @@ namespace jKnepel.Katamari
 			writer.Position = numberPosition;
 			writer.WriteUInt16(numberOfObjects);
 
-			_networkManager.SendByteDataToAll(DATA_NAME, writer.GetBuffer(), ENetworkChannel.ReliableOrdered);
+			if (_networkManager.IsHost)
+				_networkManager.SendByteDataToAll(DATA_NAME, writer.GetBuffer(), ENetworkChannel.ReliableOrdered);
+			else
+				_networkManager.SendByteDataToServer(DATA_NAME, writer.GetBuffer(), ENetworkChannel.ReliableOrdered);
 
-#if CALCULATE_BANDWIDTH
+#if DEBUG_BANDWIDTH
 			_sendBytes += writer.ByteLength;
 			_sendBytesTotal += writer.ByteLength;
 #endif
@@ -154,41 +163,17 @@ namespace jKnepel.Katamari
 		private void UpdateSimulation(byte sender, byte[] data)
 		{
 			BitReader reader = new(data, _networkManager.NetworkConfiguration.SerialiserConfiguration);
-			NetworkObjectData playerData = NetworkObjectData.ReadNetworkObjectData(reader);
-			_player.SetData(playerData);
+			//NetworkObjectState playerData = NetworkObjectState.ReadNetworkObjectState(reader);
+			//_player.SetState(playerData);
 
 			ushort numberOfObjects = reader.ReadUInt16();
 			for (ushort i = 0; i < numberOfObjects; i++)
 			{
 				int index = reader.ReadUInt16();
-				NetworkObjectData objData = NetworkObjectData.ReadNetworkObjectData(reader);
-				_networkObjects[index].SetData(objData);
+				NetworkObjectState objData = NetworkObjectState.ReadNetworkObjectState(reader);
+				_networkObjects[index].SetState(sender, objData);
 			}
 		}
-#else
-		private void SendSimulation()
-		{
-			BitWriter writer = new(_networkManager.NetworkConfiguration.SerialiserConfiguration);
-			NetworkObjectData.WriteNetworkObjectData(writer, _player.GetData());
-			foreach (NetworkObject obj in _networkObjects)
-				NetworkObjectData.WriteNetworkObjectData(writer, obj.GetData());
-
-			_networkManager.SendByteDataToAll(DATA_NAME, writer.GetBuffer(), ENetworkChannel.ReliableOrdered);
-		}
-
-		private void UpdateSimulation(byte sender, byte[] data)
-		{
-			BitReader reader = new(data, _networkManager.NetworkConfiguration.SerialiserConfiguration);
-			NetworkObjectData playerData = NetworkObjectData.ReadNetworkObjectData(reader);
-			_player.SetData(playerData);
-
-			foreach (NetworkObject obj in _networkObjects)
-			{
-				NetworkObjectData objData = NetworkObjectData.ReadNetworkObjectData(reader);
-				obj.SetData(objData);
-			}
-		}
-#endif
 
 		#endregion
 	}

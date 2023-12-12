@@ -186,6 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b47d1ff4f0c71e4493ac64ee49383f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _networkManager: {fileID: 0}
   _rb: {fileID: 2140932487166147210}
-  _forceRestAtFrame: 16
-  _forceRestThreshold: 0.5
+  _forceRestAfterFrames: 16
+  _restThreshold: 0.5
+  _material: {fileID: 2100000, guid: 5bdf56e7229467c46a85e61459cebd93, type: 2}
