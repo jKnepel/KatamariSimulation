@@ -191,7 +191,7 @@ namespace jKnepel.Katamari
 
 		public void TakeAuthority(Action<bool> onAuthorityTaken = null)
 		{
-			if (IsAuthor)
+			if (IsAuthor || _ownershipID != 0)
 			{
 				onAuthorityTaken?.Invoke(false);
 				return;
