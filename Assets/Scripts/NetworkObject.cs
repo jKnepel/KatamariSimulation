@@ -19,6 +19,7 @@ namespace jKnepel.Katamari
 		[SerializeField] private float _restThreshold = 0.5f;
 
 #if DEBUG_AUTHORITY
+		[SerializeField] private MeshRenderer _meshRenderer;
 		[SerializeField] private Material _material;
 		private Material _materialInstance;
 #endif
@@ -57,7 +58,9 @@ namespace jKnepel.Katamari
 			if (_rb == null)
 				_rb = GetComponent<Rigidbody>();
 #if DEBUG_AUTHORITY
-			GetComponent<MeshRenderer>().material = _materialInstance = Instantiate(_material);
+			if (_meshRenderer == null)
+				_meshRenderer = GetComponent<MeshRenderer>();
+			_meshRenderer.material = _materialInstance = Instantiate(_material);
 #endif
 
 			_objectName = gameObject.name;
@@ -142,6 +145,7 @@ namespace jKnepel.Katamari
 
 		public void ResetPriority() => _priorityAccumulator = 0;
 
+		public void TakeOwnership() => TakeOwnership(null);
 		public void TakeOwnership(Action<bool> onOwnershipTaken = null)
 		{
 			if (_ownershipID > 0)
@@ -189,6 +193,7 @@ namespace jKnepel.Katamari
 			}
 		}
 
+		public void TakeAuthority() => TakeAuthority(null);
 		public void TakeAuthority(Action<bool> onAuthorityTaken = null)
 		{
 			if (IsAuthor || _ownershipID != 0)
