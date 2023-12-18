@@ -1,10 +1,10 @@
 using jKnepel.SimpleUnityNetworking.Managing;
 using UnityEngine;
 
-namespace jKnepel.Katamari
+namespace jKnepel.Katamari.AttachableSimulation
 {
 	[RequireComponent(typeof(Rigidbody))]
-	public class Player : MonoBehaviour
+	public class AttachablePlayer : MonoBehaviour
 	{
 		#region attributes
 

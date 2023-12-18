@@ -1,9 +1,9 @@
 using System.Linq;
 using UnityEngine;
 
-namespace jKnepel.Katamari
+namespace jKnepel.Katamari.AttachableSimulation
 {
-	[RequireComponent(typeof(Rigidbody), typeof(Collider))]
+	[RequireComponent(typeof(Rigidbody), typeof(NetworkObject))]
 	public class Attachable : MonoBehaviour
 	{
 		#region attributes

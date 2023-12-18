@@ -6,9 +6,9 @@ using jKnepel.SimpleUnityNetworking.Serialisation;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace jKnepel.Katamari
+namespace jKnepel.Katamari.XRSimulation
 {
-    public class SimulationManager : MonoBehaviour
+    public class XRSimulationManager : MonoBehaviour
     {
 		#region attributes
 
@@ -51,7 +51,7 @@ namespace jKnepel.Katamari
 		private void Start()
 		{
 			_networkObjects = _objectParent.GetComponentsInChildren<NetworkObject>();
-			for (ushort i = 0; i < _networkObjects.Length; i++)
+			for (ushort i = 1; i <= _networkObjects.Length; i++)
 				_networkObjectsList.Add((i, _networkObjects[i]));
 		}
 
@@ -76,6 +76,8 @@ namespace jKnepel.Katamari
 #if DEBUG_BANDWIDTH
 		private void Update()
 		{
+			if (!_networkManager.IsConnected) return;
+
 			_frameTime += Time.deltaTime;
 			if (_frameTime > 1)
 			{
