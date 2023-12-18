@@ -39,8 +39,6 @@ namespace jKnepel.Katamari
 
 		public float PriorityAccumulator => _priorityAccumulator;
 		private float _priorityAccumulator = 0;
-		public float Priority => _priority;
-		private float _priority = 0.1f;
 
 		private int _frameNumber = 0;
 		private bool _stillAtRest = false;
@@ -85,9 +83,10 @@ namespace jKnepel.Katamari
 		private void FixedUpdate()
 		{
 			if (!IsResponsible) return;
-
-			_priority = _rb.velocity.magnitude + _rb.angularVelocity.magnitude;
-			_priorityAccumulator += _priority;
+			if (!IsOwner)
+			{
+				_priorityAccumulator += _rb.velocity.magnitude + _rb.angularVelocity.magnitude;
+			}
 			
 			_frameNumber++;
 			float kineticEnergy = Mathf.Pow(_rb.velocity.magnitude, 2) * 0.5f + Mathf.Pow(_rb.angularVelocity.magnitude, 2) * 0.5f;
@@ -122,8 +121,6 @@ namespace jKnepel.Katamari
 		{
 			return new()
 			{
-				OwnershipSequence = _ownershipSequence,
-				AuthoritySequence = _authoritySequence,
 				Position = _rb.position,
 				Rotation = _rb.rotation,
 				AtRest = _stillAtRest,
@@ -146,9 +143,9 @@ namespace jKnepel.Katamari
 		public void ResetPriority() => _priorityAccumulator = 0;
 
 		public void TakeOwnership() => TakeOwnership(null);
-		public void TakeOwnership(Action<bool> onOwnershipTaken = null)
+		public void TakeOwnership(Action<bool> onOwnershipTaken)
 		{
-			if (_ownershipID > 0)
+			if (_ownershipID > 0 || !_networkManager.IsConnected)
 			{
 				onOwnershipTaken?.Invoke(false);
 				return;
@@ -175,7 +172,7 @@ namespace jKnepel.Katamari
 
 		public void ReleaseOwnership()
 		{
-			if (!IsOwner) return;
+			if (!IsOwner || !_networkManager.IsConnected) return;
 
 			BitWriter bitWriter = new();
 			_ownershipSequence++;
@@ -194,9 +191,9 @@ namespace jKnepel.Katamari
 		}
 
 		public void TakeAuthority() => TakeAuthority(null);
-		public void TakeAuthority(Action<bool> onAuthorityTaken = null)
+		public void TakeAuthority(Action<bool> onAuthorityTaken)
 		{
-			if (IsAuthor || _ownershipID != 0)
+			if (IsAuthor || _ownershipID != 0 || !_networkManager.IsConnected)
 			{
 				onAuthorityTaken?.Invoke(false);
 				return;
@@ -221,7 +218,7 @@ namespace jKnepel.Katamari
 
 		public void ReleaseAuthority()
 		{
-			if (!IsAuthor || IsOwner) return;
+			if (!IsAuthor || IsOwner || !_networkManager.IsConnected) return;
 
 			_authoritySequence++;
 			BitWriter bitWriter = new();
@@ -379,7 +376,12 @@ namespace jKnepel.Katamari
 		{
 			_ownershipID = clientID;
 			_ownershipSequence = ownershipSequence;
-			
+
+			if (clientID == ClientID)
+			{
+				_priorityAccumulator = -1;
+			}
+
 			if (_onOwnershipTaken != null)
 			{
 				_onOwnershipTaken.Invoke(clientID == ClientID);
@@ -391,6 +393,11 @@ namespace jKnepel.Katamari
 		{
 			_ownershipID = 0;
 			_ownershipSequence = ownershipSequence;
+
+			if (ClientID == ClientID)
+			{
+				_priorityAccumulator = 100000;
+			}
 		}
 
 		private void SetTakeAuthority(byte clientID, ushort authoritySequence)
@@ -440,8 +447,6 @@ namespace jKnepel.Katamari
 
 	public struct NetworkObjectState : IStructData
 	{
-		public ushort OwnershipSequence;
-		public ushort AuthoritySequence;
 		public Vector3 Position;
 		public Quaternion Rotation;
 		public bool AtRest;
@@ -450,8 +455,6 @@ namespace jKnepel.Katamari
 
 		public static NetworkObjectState ReadNetworkObjectState(BitReader reader)
 		{
-			ushort authoritySequence = reader.ReadUInt16();
-			ushort ownershipSequence = reader.ReadUInt16();
 			Vector3 position = reader.ReadVector3();
 			Quaternion rotation = reader.ReadQuaternion();
 			bool atRest = reader.ReadBoolean();
@@ -460,8 +463,6 @@ namespace jKnepel.Katamari
 
 			return new()
 			{
-				OwnershipSequence = ownershipSequence,
-				AuthoritySequence = authoritySequence,
 				Position = position,
 				Rotation = rotation,
 				AtRest = atRest,
@@ -472,8 +473,6 @@ namespace jKnepel.Katamari
 
 		public static void WriteNetworkObjectState(BitWriter writer, NetworkObjectState data)
 		{
-			writer.WriteUInt16(data.OwnershipSequence);
-			writer.WriteUInt16(data.AuthoritySequence);
 			writer.WriteVector3(data.Position);
 			writer.WriteQuaternion(data.Rotation);
 			writer.WriteBoolean(data.AtRest);

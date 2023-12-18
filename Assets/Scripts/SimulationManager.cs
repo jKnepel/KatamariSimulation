@@ -47,7 +47,7 @@ namespace jKnepel.Katamari
 			if (_objectParent == null)
 				_objectParent = transform;
 
-			SetupSimulation();
+			//SetupSimulation();
 			
 			if (_networkManager.IsConnected)
 				_networkManager.RegisterByteData(DATA_NAME, UpdateSimulation);

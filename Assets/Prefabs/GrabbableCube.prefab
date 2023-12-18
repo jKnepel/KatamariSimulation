@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3778527158020683888}
   - component: {fileID: 7420387700322377981}
   - component: {fileID: 4085113760856123235}
+  - component: {fileID: 498970561582354312}
   m_Layer: 0
   m_Name: GrabbableCube
   m_TagString: Untagged
@@ -200,7 +201,7 @@ MonoBehaviour:
   m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
-  m_AngularVelocityDamping: 1
+  m_AngularVelocityDamping: 0.254
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
   m_SmoothPosition: 0
@@ -280,6 +281,19 @@ MonoBehaviour:
   _restThreshold: 0.5
   _meshRenderer: {fileID: 6434700291845648370}
   _material: {fileID: 2100000, guid: 5bdf56e7229467c46a85e61459cebd93, type: 2}
+--- !u!114 &498970561582354312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3778527158020683889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 076b3782737ddb74488e57fa578b7f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _networkObject: {fileID: 4085113760856123235}
 --- !u!1 &6858884539897815680
 GameObject:
   m_ObjectHideFlags: 0
