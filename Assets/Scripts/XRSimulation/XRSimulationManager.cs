@@ -21,10 +21,10 @@ namespace jKnepel.Katamari.XRSimulation
 		[SerializeField] private int _maxNumberBytes = 1150;
 
 		private NetworkObject[] _networkObjects;
-		private readonly List<(ushort, NetworkObject)> _networkObjectsList = new();
+		private readonly List<NetworkObject> _networkObjectsList = new();
 
 		private float _currentTime = 0;
-		private const string DATA_NAME = "Simulation";
+		private const string DATA_NAME = "XRSimulation";
 
 #if DEBUG_BANDWIDTH
 		private int _sendBytes = 0;
@@ -52,7 +52,10 @@ namespace jKnepel.Katamari.XRSimulation
 		{
 			_networkObjects = _objectParent.GetComponentsInChildren<NetworkObject>();
 			for (ushort i = 1; i <= _networkObjects.Length; i++)
-				_networkObjectsList.Add((i, _networkObjects[i]));
+			{
+				_networkObjects[i-1].Initialise(i);
+				_networkObjectsList.Add(_networkObjects[i-1]);
+			}
 		}
 
 		private void OnDisable()
@@ -99,20 +102,20 @@ namespace jKnepel.Katamari.XRSimulation
 
 		private void SendSimulation()
 		{
-			_networkObjectsList.Sort((a, b) => a.Item2.CompareTo(b.Item2));
+			_networkObjectsList.Sort((a, b) => a.CompareTo(b));
 			BitWriter writer = new(_networkManager.NetworkConfiguration.SerialiserConfiguration);
 			int numberPosition = writer.Position;
 			writer.Skip(writer.Int16);
 
 			ushort numberOfObjects = 0;
-			foreach ((ushort, NetworkObject) obj in _networkObjectsList)
+			foreach (NetworkObject obj in _networkObjectsList)
 			{
-				if (obj.Item2.PriorityAccumulator < 0 || !obj.Item2.IsResponsible)
+				if (obj.PriorityAccumulator < 0 || !obj.IsResponsible)
 					continue;
-
-				writer.WriteUInt16(obj.Item1);
-				NetworkObjectState.WriteNetworkObjectState(writer, obj.Item2.GetState());
-				obj.Item2.ResetPriority();
+				
+				writer.WriteUInt16((ushort)obj.ObjectID);
+				NetworkObjectState.WriteNetworkObjectState(writer, obj.GetState());
+				obj.ResetPriority();
 				numberOfObjects++;
 
 				if (writer.ByteLength >= _maxNumberBytes) break;
@@ -121,10 +124,7 @@ namespace jKnepel.Katamari.XRSimulation
 			writer.Position = numberPosition;
 			writer.WriteUInt16(numberOfObjects);
 
-			if (_networkManager.IsHost)
-				_networkManager.SendByteDataToAll(DATA_NAME, writer.GetBuffer(), ENetworkChannel.ReliableOrdered);
-			else
-				_networkManager.SendByteDataToServer(DATA_NAME, writer.GetBuffer(), ENetworkChannel.ReliableOrdered);
+			_networkManager.SendByteDataToAll(DATA_NAME, writer.GetBuffer(), ENetworkChannel.ReliableOrdered);
 
 #if DEBUG_BANDWIDTH
 			_sendBytes += writer.ByteLength;
@@ -141,7 +141,7 @@ namespace jKnepel.Katamari.XRSimulation
 			{
 				int index = reader.ReadUInt16();
 				NetworkObjectState objData = NetworkObjectState.ReadNetworkObjectState(reader);
-				_networkObjects[index].SetState(sender, objData);
+				_networkObjects[index-1].SetState(sender, objData);
 			}
 		}
 

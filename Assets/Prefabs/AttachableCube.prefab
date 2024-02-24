@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7763944478135559483
 Transform:
   m_ObjectHideFlags: 0
@@ -149,11 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _networkObject: {fileID: 4413351279911025955}
   _rb: {fileID: 7763944478135559461}
-  _attachableMaterial: {fileID: 2100000, guid: 5bdf56e7229467c46a85e61459cebd93, type: 2}
-  _restColor: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
-  _activeColor: {r: 1, g: 0.06132078, b: 0.06132078, a: 1}
   _gravitationalPull: 3000
-  _fadeDuration: 3
 --- !u!114 &4413351279911025955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,4 +166,5 @@ MonoBehaviour:
   _rb: {fileID: 7763944478135559461}
   _forceRestAfterFrames: 16
   _restThreshold: 0.5
+  _meshRenderer: {fileID: 0}
   _material: {fileID: 2100000, guid: 5bdf56e7229467c46a85e61459cebd93, type: 2}

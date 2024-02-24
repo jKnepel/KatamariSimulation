@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414738, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -185,7 +185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (180)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -259,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (332)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -333,7 +333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (109)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -407,7 +407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (304)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -481,7 +481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (116)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -555,7 +555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (223)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -629,7 +629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (295)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -703,7 +703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (345)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -777,7 +777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (5)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -851,7 +851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (217)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -925,7 +925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (316)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -999,7 +999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (97)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1073,7 +1073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (337)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1147,7 +1147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (144)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1221,7 +1221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (251)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1295,7 +1295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (321)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1369,7 +1369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (372)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1443,7 +1443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (98)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1517,7 +1517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (87)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1591,7 +1591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (2)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1665,7 +1665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (81)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1739,7 +1739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (317)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1813,7 +1813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (273)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1887,7 +1887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (193)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1961,7 +1961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (167)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2140,7 +2140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (245)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2214,7 +2214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (123)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2288,7 +2288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (105)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2362,7 +2362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (49)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2436,7 +2436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (248)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2510,7 +2510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (125)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2584,7 +2584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (231)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2703,7 +2703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (30)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2777,7 +2777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (291)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2851,7 +2851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (41)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2925,7 +2925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (191)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2999,7 +2999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (131)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3073,7 +3073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (79)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3147,7 +3147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (44)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3221,7 +3221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (126)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3295,7 +3295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (51)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3474,7 +3474,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (323)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3548,7 +3548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (260)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3622,7 +3622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (378)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3696,7 +3696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (42)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3770,7 +3770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (119)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3844,7 +3844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (204)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3918,7 +3918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (4)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3992,7 +3992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (311)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4066,7 +4066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (75)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4140,7 +4140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (364)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4214,7 +4214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (6)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4288,7 +4288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (194)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4362,7 +4362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (259)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4436,7 +4436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (233)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4510,7 +4510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (90)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4584,7 +4584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (103)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4658,7 +4658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (16)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4732,7 +4732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (112)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4806,7 +4806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (377)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4880,7 +4880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (3)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4954,7 +4954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (10)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5028,7 +5028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (314)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5102,7 +5102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (122)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5176,7 +5176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (296)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5250,7 +5250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (319)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5324,7 +5324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (265)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5398,7 +5398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (159)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5472,7 +5472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (20)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5546,7 +5546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (8)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5620,7 +5620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (301)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5694,7 +5694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (257)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5768,7 +5768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (80)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5842,7 +5842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (53)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5916,7 +5916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (171)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5990,7 +5990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (7)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6064,7 +6064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (135)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6138,7 +6138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (302)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6212,7 +6212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (40)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6286,7 +6286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (303)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6360,7 +6360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (361)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6508,7 +6508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (92)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6582,7 +6582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (157)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6656,7 +6656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (201)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6730,7 +6730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (369)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6804,7 +6804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (136)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6878,7 +6878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (113)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6952,7 +6952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (165)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7026,7 +7026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (339)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7100,7 +7100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (195)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7174,7 +7174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (341)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7248,7 +7248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (111)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7322,7 +7322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (238)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7396,7 +7396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (172)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7470,7 +7470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (258)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7544,7 +7544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (350)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7618,7 +7618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (320)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7692,7 +7692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (327)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7766,7 +7766,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (164)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7840,7 +7840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (149)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7914,7 +7914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (137)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7988,7 +7988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (141)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8062,7 +8062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (134)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8136,7 +8136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (166)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8210,7 +8210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (222)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8284,7 +8284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (77)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8358,7 +8358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (335)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8432,7 +8432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (175)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8506,7 +8506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (117)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8580,7 +8580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (262)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8654,7 +8654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (349)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8728,7 +8728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (370)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8802,7 +8802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (330)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8876,7 +8876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (310)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8950,7 +8950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (288)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9118,7 +9118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (15)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9192,7 +9192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (211)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9266,7 +9266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (226)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9340,7 +9340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (63)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9414,7 +9414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (254)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9488,7 +9488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (9)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9562,7 +9562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (76)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9636,7 +9636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (187)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9710,7 +9710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (366)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9784,7 +9784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (55)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9858,7 +9858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (218)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9932,7 +9932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (358)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10006,7 +10006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (312)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10080,7 +10080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (360)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10154,7 +10154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (96)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10265,7 +10265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (313)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10339,7 +10339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (32)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10518,7 +10518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (376)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10592,7 +10592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (210)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10666,7 +10666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (269)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10740,7 +10740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (47)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10814,7 +10814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (276)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10888,7 +10888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (357)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10962,7 +10962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (183)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11036,7 +11036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (189)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11110,7 +11110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (219)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11184,7 +11184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (18)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11258,7 +11258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (235)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11332,7 +11332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (300)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11406,7 +11406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (206)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11480,7 +11480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (294)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11554,7 +11554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (329)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11628,7 +11628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (298)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11702,7 +11702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (324)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11776,7 +11776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (29)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11850,7 +11850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (352)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11924,7 +11924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (154)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11998,7 +11998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (208)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12173,7 +12173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (243)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12247,7 +12247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (26)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12321,7 +12321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (250)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12395,7 +12395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (64)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12469,7 +12469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (177)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12543,7 +12543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (307)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12617,7 +12617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (331)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12691,7 +12691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (11)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12765,7 +12765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (173)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12839,7 +12839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (334)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12913,7 +12913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (363)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12987,7 +12987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (169)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13061,7 +13061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (28)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13135,7 +13135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (286)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13209,7 +13209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (290)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13283,7 +13283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (234)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13357,7 +13357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (220)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13431,7 +13431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (148)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13505,7 +13505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (91)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13579,7 +13579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (192)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13653,7 +13653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (21)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13727,7 +13727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (284)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13801,7 +13801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (240)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13875,7 +13875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (261)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13949,7 +13949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (56)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14023,7 +14023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (293)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14097,7 +14097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (84)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14171,7 +14171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (61)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14245,7 +14245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (158)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14319,7 +14319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (127)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14393,7 +14393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (270)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14467,7 +14467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (280)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14541,7 +14541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (128)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14615,7 +14615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (66)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14689,7 +14689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (287)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14763,7 +14763,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (256)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14837,7 +14837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (279)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14911,7 +14911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (67)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14985,7 +14985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (68)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15059,7 +15059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (188)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15133,7 +15133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (54)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15207,7 +15207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (230)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15281,7 +15281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (155)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15355,7 +15355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (99)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15429,7 +15429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (115)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15503,7 +15503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (212)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15577,7 +15577,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (281)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15651,7 +15651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (46)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15725,7 +15725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (163)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15799,7 +15799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (266)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15978,7 +15978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (170)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16052,7 +16052,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (371)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16126,7 +16126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (278)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16200,7 +16200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (153)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16274,7 +16274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (152)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16348,7 +16348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (190)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16422,7 +16422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (174)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16496,7 +16496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (242)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16570,7 +16570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (37)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16644,7 +16644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (362)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16718,7 +16718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (343)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16792,7 +16792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (89)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16866,7 +16866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (181)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16940,7 +16940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (101)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17014,7 +17014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (346)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17088,7 +17088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (14)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17162,7 +17162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (322)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17236,7 +17236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (268)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17310,7 +17310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (309)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17384,7 +17384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (78)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17458,7 +17458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (253)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17532,7 +17532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (184)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17606,7 +17606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (338)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17680,7 +17680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (65)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17754,7 +17754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (88)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17828,7 +17828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (121)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17902,7 +17902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (35)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17976,7 +17976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (124)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18050,7 +18050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (326)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18124,7 +18124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (373)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18198,7 +18198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (160)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18272,7 +18272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (138)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18346,7 +18346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (38)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18420,7 +18420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (118)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18494,7 +18494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (236)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18568,7 +18568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (333)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18642,7 +18642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (275)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18716,7 +18716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (106)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18790,7 +18790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (225)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18864,7 +18864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (147)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18938,7 +18938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (31)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19012,7 +19012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (213)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19086,7 +19086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (267)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19160,7 +19160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (356)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19234,7 +19234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (283)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19308,7 +19308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (272)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19382,7 +19382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (57)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19456,7 +19456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (355)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19530,7 +19530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (102)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19604,7 +19604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (359)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19678,7 +19678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (348)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19752,7 +19752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (50)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19826,7 +19826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (198)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19900,7 +19900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (110)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19974,7 +19974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (228)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20048,7 +20048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (24)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20122,7 +20122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (215)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20196,7 +20196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (351)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20270,7 +20270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (100)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20344,7 +20344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (133)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20418,7 +20418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (354)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20492,7 +20492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (161)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20566,7 +20566,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (43)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20640,7 +20640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (325)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20714,7 +20714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (69)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20788,7 +20788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (247)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20862,7 +20862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (299)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20936,7 +20936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (274)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21010,7 +21010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (94)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21084,7 +21084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (156)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21158,7 +21158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (224)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21232,7 +21232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (214)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21306,7 +21306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (367)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21742,11 +21742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _networkManager: {fileID: 215654682}
-  _player: {fileID: 0}
   _objectParent: {fileID: 1663676916}
-  _objectPrefab: {fileID: 4085113760856123235, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
-  _numberOfObjects: 1500
-  _spawnDistance: 0.5
   _tickRate: 10
   _maxNumberBytes: 2000
 --- !u!1001 &1667104354
@@ -21811,7 +21807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (45)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21885,7 +21881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (39)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21959,7 +21955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (71)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22033,7 +22029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (48)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22107,7 +22103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (344)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22181,7 +22177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (85)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22255,7 +22251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (315)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22329,7 +22325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (25)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22403,7 +22399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (150)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22477,7 +22473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (252)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22551,7 +22547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (200)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22625,7 +22621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (282)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22699,7 +22695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (241)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22773,7 +22769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (58)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22847,7 +22843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (83)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22921,7 +22917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (72)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22995,7 +22991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (19)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23069,7 +23065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (60)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23143,7 +23139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (244)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23217,7 +23213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (375)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23291,7 +23287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (129)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23365,7 +23361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (342)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23439,7 +23435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (162)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23513,7 +23509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (207)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23587,7 +23583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (308)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23661,7 +23657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (114)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23735,7 +23731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (255)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23809,7 +23805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (209)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23883,7 +23879,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (232)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23957,7 +23953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (120)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24031,7 +24027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (205)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24105,7 +24101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (305)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24179,7 +24175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (93)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24253,7 +24249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (347)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24327,7 +24323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (52)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24401,7 +24397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (179)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24475,7 +24471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (86)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24549,7 +24545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (108)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24623,7 +24619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (237)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24697,7 +24693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (140)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24771,7 +24767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (216)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24845,7 +24841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (27)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24919,7 +24915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (139)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24993,7 +24989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (340)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25067,7 +25063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (17)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25141,7 +25137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (168)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25215,7 +25211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (306)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25289,7 +25285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (82)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25363,7 +25359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (74)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25437,7 +25433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (285)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25511,7 +25507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (365)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25585,7 +25581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (104)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25659,7 +25655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (239)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25733,7 +25729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (130)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25807,7 +25803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (221)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25881,7 +25877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (145)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25955,7 +25951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (132)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26029,7 +26025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (263)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26103,7 +26099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (178)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26177,7 +26173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (271)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26251,7 +26247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (368)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26325,7 +26321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (107)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26399,7 +26395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (13)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26473,7 +26469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (202)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26547,7 +26543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (203)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26621,7 +26617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (22)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26695,7 +26691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (292)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26769,7 +26765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (33)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26843,7 +26839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (186)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26917,7 +26913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (1)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26991,7 +26987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (297)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27065,7 +27061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (146)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27139,7 +27135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (264)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27213,7 +27209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (12)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27287,7 +27283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (289)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27361,7 +27357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (176)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27435,7 +27431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (34)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27509,7 +27505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (182)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27583,7 +27579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (318)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27657,7 +27653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (23)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27949,7 +27945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (142)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28023,7 +28019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (353)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28097,7 +28093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (62)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28171,7 +28167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (151)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28245,7 +28241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (73)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28319,7 +28315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (197)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28393,7 +28389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (277)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28467,7 +28463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (249)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28541,7 +28537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (229)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28615,7 +28611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (199)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28689,7 +28685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (246)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28763,7 +28759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (59)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28837,7 +28833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (374)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28911,7 +28907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (95)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28985,7 +28981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (227)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29059,7 +29055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (328)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29133,7 +29129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (36)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29207,7 +29203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (336)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29281,7 +29277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (185)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29355,7 +29351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (70)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29429,7 +29425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (143)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29503,7 +29499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778527158020683889, guid: 57c2d4905a5a1fb49a6808502b851663, type: 3}
       propertyPath: m_Name
-      value: GrabbableCube (196)
+      value: GrabbableCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

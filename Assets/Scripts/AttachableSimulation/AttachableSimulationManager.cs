@@ -25,10 +25,10 @@ namespace jKnepel.Katamari.AttachableSimulation
 		[SerializeField] private int _maxNumberBytes = 1150;
 
 		private NetworkObject[] _networkObjects;
-		private readonly List<(ushort, NetworkObject)> _networkObjectsList = new();
+		private readonly List<NetworkObject> _networkObjectsList = new();
 
 		private float _currentTime = 0;
-		private const string DATA_NAME = "Simulation";
+		private const string DATA_NAME = "AttachableSimulation";
 
 #if DEBUG_BANDWIDTH
 		private int _sendBytes = 0;
@@ -58,7 +58,7 @@ namespace jKnepel.Katamari.AttachableSimulation
 			float startX = -(((float)(numberOfColumns - 1)) / 2 * _spawnDistance);
 			float startZ = -(((float)(numberOfRows - 1)) / 2 * _spawnDistance);
 
-			int index = 0;
+			int index = 1;
 			for (int i = 0; i < numberOfColumns; i++)
 			{
 				for (int j = 0; j < numberOfRows; j++)
@@ -70,10 +70,10 @@ namespace jKnepel.Katamari.AttachableSimulation
 					float z = startZ + j * _spawnDistance;
 					Vector3 position = new(x, _objectPrefab.transform.position.y, z);
 					NetworkObject obj = Instantiate(_objectPrefab, position, _objectPrefab.transform.rotation, _objectParent);
-					obj.gameObject.name = $"Object#{index}";
-					_networkObjects[i] = obj;
-					_networkObjectsList.Add(((ushort)i, obj));
-					obj.gameObject.SetActive(true);
+					obj.Initialise(index);
+					_networkObjectsList.Add(obj);
+					_networkObjects[index-1] = obj;
+					index++;
 				}
 			}
 		}
@@ -122,20 +122,20 @@ namespace jKnepel.Katamari.AttachableSimulation
 
 		private void SendSimulation()
 		{
-			_networkObjectsList.Sort((a, b) => a.Item2.CompareTo(b.Item2));
+			_networkObjectsList.Sort((a, b) => a.CompareTo(b));
 			BitWriter writer = new(_networkManager.NetworkConfiguration.SerialiserConfiguration);
 			int numberPosition = writer.Position;
 			writer.Skip(writer.Int16);
 
 			ushort numberOfObjects = 0;
-			foreach ((ushort, NetworkObject) obj in _networkObjectsList)
+			foreach (NetworkObject obj in _networkObjectsList)
 			{
-				if (obj.Item2.PriorityAccumulator < 0 || !obj.Item2.IsResponsible)
+				if (!obj.IsResponsible)
 					continue;
-
-				writer.WriteUInt16(obj.Item1);
-				NetworkObjectState.WriteNetworkObjectState(writer, obj.Item2.GetState());
-				obj.Item2.ResetPriority();
+				
+				writer.WriteUInt16((ushort)obj.ObjectID);
+				NetworkObjectState.WriteNetworkObjectState(writer, obj.GetState());
+				obj.ResetPriority();
 				numberOfObjects++;
 
 				if (writer.ByteLength >= _maxNumberBytes) break;
@@ -164,7 +164,7 @@ namespace jKnepel.Katamari.AttachableSimulation
 			{
 				int index = reader.ReadUInt16();
 				NetworkObjectState objData = NetworkObjectState.ReadNetworkObjectState(reader);
-				_networkObjects[index].SetState(sender, objData);
+				_networkObjects[index-1].SetState(sender, objData);
 			}
 		}
 
