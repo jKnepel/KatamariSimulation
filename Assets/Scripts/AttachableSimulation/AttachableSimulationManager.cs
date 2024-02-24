@@ -26,6 +26,7 @@ namespace jKnepel.Katamari.AttachableSimulation
 
 		private NetworkObject[] _networkObjects;
 		private readonly List<NetworkObject> _networkObjectsList = new();
+		private readonly Queue<(byte, byte[])> _receivedPackets = new();
 
 		private float _currentTime = 0;
 		private const string DATA_NAME = "AttachableSimulation";
@@ -47,9 +48,9 @@ namespace jKnepel.Katamari.AttachableSimulation
 				_objectParent = transform;
 
 			if (_networkManager.IsConnected)
-				_networkManager.RegisterByteData(DATA_NAME, UpdateSimulation);
+				_networkManager.RegisterByteData(DATA_NAME, ReceiveSimulation);
 			else
-				_networkManager.OnConnected += () => _networkManager.RegisterByteData(DATA_NAME, UpdateSimulation);
+				_networkManager.OnConnected += () => _networkManager.RegisterByteData(DATA_NAME, ReceiveSimulation);
 
 			_networkObjects = new NetworkObject[_numberOfObjects];
 			int numberOfColumns = (int)Math.Ceiling(Mathf.Sqrt(_numberOfObjects));
@@ -81,26 +82,22 @@ namespace jKnepel.Katamari.AttachableSimulation
 		private void OnDisable()
 		{
 			if (_networkManager.IsConnected)
-				_networkManager.UnregisterByteData(DATA_NAME, UpdateSimulation);
+				_networkManager.UnregisterByteData(DATA_NAME, ReceiveSimulation);
 		}
 
-		private void FixedUpdate()
-		{
-			if (!_networkManager.IsConnected) return;
-
-			if (_currentTime > 1f / _tickRate)
-			{
-				SendSimulation();
-				_currentTime = 0;
-			}
-			_currentTime += Time.deltaTime;
-		}
-
-#if DEBUG_BANDWIDTH
 		private void Update()
 		{
 			if (!_networkManager.IsConnected) return;
+			
+			if (_currentTime > 1f / _tickRate)
+			{
+				SendSimulation();
+				UpdateSimulation();
+				_currentTime = 0;
+			}
+			_currentTime += Time.deltaTime;
 
+#if DEBUG_BANDWIDTH
 			_frameTime += Time.deltaTime;
 			if (_frameTime > 1)
 			{
@@ -113,8 +110,8 @@ namespace jKnepel.Katamari.AttachableSimulation
 				_sendBytes = 0;
 				_secondCount++;
 			}
-		}
 #endif
+		}
 
 		#endregion
 
@@ -155,16 +152,23 @@ namespace jKnepel.Katamari.AttachableSimulation
 #endif
 		}
 
-		private void UpdateSimulation(byte sender, byte[] data)
+		private void ReceiveSimulation(byte sender, byte[] data)
 		{
-			BitReader reader = new(data, _networkManager.NetworkConfiguration.SerialiserConfiguration);
+			_receivedPackets.Enqueue((sender, data));
+		}
+
+		private void UpdateSimulation()
+		{
+			if (!_receivedPackets.TryDequeue(out (byte, byte[]) result)) return;
+
+			BitReader reader = new(result.Item2, _networkManager.NetworkConfiguration.SerialiserConfiguration);
 
 			ushort numberOfObjects = reader.ReadUInt16();
 			for (ushort i = 0; i < numberOfObjects; i++)
 			{
 				int index = reader.ReadUInt16();
 				NetworkObjectState objData = NetworkObjectState.ReadNetworkObjectState(reader);
-				_networkObjects[index-1].SetState(sender, objData);
+				_networkObjects[index-1].SetState(result.Item1, objData);
 			}
 		}
 
