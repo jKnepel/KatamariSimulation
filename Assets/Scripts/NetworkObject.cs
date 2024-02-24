@@ -19,6 +19,7 @@ namespace jKnepel.Katamari
 		[SerializeField] private float _restThreshold = 0.5f;
 
 #if DEBUG_AUTHORITY
+		[SerializeField] private MeshRenderer _meshRenderer;
 		[SerializeField] private Material _material;
 		private Material _materialInstance;
 #endif
@@ -38,12 +39,15 @@ namespace jKnepel.Katamari
 
 		public float PriorityAccumulator => _priorityAccumulator;
 		private float _priorityAccumulator = 0;
-		public float Priority => _priority;
-		private float _priority = 0.1f;
+		private Vector3 _lastPosition;
 
 		private int _frameNumber = 0;
 		private bool _stillAtRest = false;
 
+		public int ObjectID => _objectID;
+		private int _objectID;
+
+		public string ObjectName => _objectName;
 		private string _objectName;
 
 		#endregion
@@ -56,16 +60,18 @@ namespace jKnepel.Katamari
 				_networkManager = GameObject.FindWithTag("NetworkManager").GetComponent<NetworkManager>();
 			if (_rb == null)
 				_rb = GetComponent<Rigidbody>();
-#if DEBUG_AUTHORITY
-			GetComponent<MeshRenderer>().material = _materialInstance = Instantiate(_material);
-#endif
 
-			_objectName = gameObject.name;
 			if (_networkManager.IsConnected)
 				RegisterNetworkObject();
 			else
 				_networkManager.OnConnected += RegisterNetworkObject;
-			_networkManager.OnClientDisconnected += ReleaseHostageAuthorities;
+			_networkManager.OnClientDisconnected += ReleaseHostageObjects;
+
+#if DEBUG_AUTHORITY
+			if (_meshRenderer == null)
+				_meshRenderer = GetComponent<MeshRenderer>();
+			_meshRenderer.material = _materialInstance = Instantiate(_material);
+#endif
 		}
 
 		private void OnDisable()
@@ -73,9 +79,9 @@ namespace jKnepel.Katamari
 			if (_networkManager.IsConnected)
 			{
 				if (_networkManager.IsHost)
-					_networkManager.UnregisterByteData(_objectName, UpdateOwnershipHost);
+					_networkManager.UnregisterByteData(ObjectName, UpdateOwnershipHost);
 				else
-					_networkManager.UnregisterByteData(_objectName, UpdateOwnership);
+					_networkManager.UnregisterByteData(ObjectName, UpdateOwnership);
 			}
 		}
 
@@ -83,9 +89,10 @@ namespace jKnepel.Katamari
 		{
 			if (!IsResponsible) return;
 
-			_priority = _rb.velocity.magnitude + _rb.angularVelocity.magnitude;
-			_priorityAccumulator += _priority;
-			
+			_priorityAccumulator += _rb.velocity.magnitude + _rb.angularVelocity.magnitude;
+			_priorityAccumulator += (_lastPosition - _rb.position).magnitude;
+			_lastPosition = _rb.position;
+
 			_frameNumber++;
 			float kineticEnergy = Mathf.Pow(_rb.velocity.magnitude, 2) * 0.5f + Mathf.Pow(_rb.angularVelocity.magnitude, 2) * 0.5f;
 			_stillAtRest = kineticEnergy < _restThreshold;
@@ -115,12 +122,16 @@ namespace jKnepel.Katamari
 
 		#region public methods
 
+		public void Initialise(int objectID)
+		{
+			_objectID = objectID;
+			gameObject.name = _objectName = $"Object#{_objectID}";
+		}
+
 		public NetworkObjectState GetState()
 		{
 			return new()
 			{
-				OwnershipSequence = _ownershipSequence,
-				AuthoritySequence = _authoritySequence,
 				Position = _rb.position,
 				Rotation = _rb.rotation,
 				AtRest = _stillAtRest,
@@ -131,8 +142,7 @@ namespace jKnepel.Katamari
 
 		public void SetState(byte sender, NetworkObjectState data)
 		{
-			if (_networkManager.IsHost && _authorityID != sender 
-				|| !_networkManager.IsHost && _authorityID == ClientID) return;
+			if (_authorityID != sender) return;
 
 			_rb.position = data.Position;
 			_rb.rotation = data.Rotation;
@@ -142,9 +152,10 @@ namespace jKnepel.Katamari
 
 		public void ResetPriority() => _priorityAccumulator = 0;
 
-		public void TakeOwnership(Action<bool> onOwnershipTaken = null)
+		public void TakeOwnership() => TakeOwnership(null);
+		public void TakeOwnership(Action<bool> onOwnershipTaken)
 		{
-			if (_ownershipID > 0)
+			if (_ownershipID > 0 || !_networkManager.IsConnected)
 			{
 				onOwnershipTaken?.Invoke(false);
 				return;
@@ -158,20 +169,20 @@ namespace jKnepel.Katamari
 			if (_networkManager.IsHost)
 			{
 				SetTakeOwnership(ClientID, _ownershipSequence);
-				if (_authorityID != ClientID) SetTakeAuthority(ClientID, _authoritySequence);
+				SetTakeAuthority(ClientID, _authoritySequence);
 				NetworkObjectPacket.WriteNetworkObjectPacket(bitWriter, packet);
-				_networkManager.SendByteDataToAll(_objectName, bitWriter.GetBuffer());
+				_networkManager.SendByteDataToAll(ObjectName, bitWriter.GetBuffer());
 			}
 			else
 			{
 				NetworkObjectPacket.WriteNetworkObjectPacket(bitWriter, packet);
-				_networkManager.SendByteDataToServer(_objectName, bitWriter.GetBuffer());
+				_networkManager.SendByteDataToServer(ObjectName, bitWriter.GetBuffer());
 			}
 		}
 
 		public void ReleaseOwnership()
 		{
-			if (!IsOwner) return;
+			if (!IsOwner || !_networkManager.IsConnected) return;
 
 			BitWriter bitWriter = new();
 			_ownershipSequence++;
@@ -180,18 +191,19 @@ namespace jKnepel.Katamari
 			{
 				SetReleaseOwnership(packet.OwnershipSequence);
 				NetworkObjectPacket.WriteNetworkObjectPacket(bitWriter, packet);
-				_networkManager.SendByteDataToAll(_objectName, bitWriter.GetBuffer());
+				_networkManager.SendByteDataToAll(ObjectName, bitWriter.GetBuffer());
 			}
 			else
 			{
 				NetworkObjectPacket.WriteNetworkObjectPacket(bitWriter, packet);
-				_networkManager.SendByteDataToServer(_objectName, bitWriter.GetBuffer());
+				_networkManager.SendByteDataToServer(ObjectName, bitWriter.GetBuffer());
 			}
 		}
 
-		public void TakeAuthority(Action<bool> onAuthorityTaken = null)
+		public void TakeAuthority() => TakeAuthority(null);
+		public void TakeAuthority(Action<bool> onAuthorityTaken)
 		{
-			if (IsAuthor || _ownershipID != 0)
+			if (IsAuthor || _ownershipID != 0 || !_networkManager.IsConnected)
 			{
 				onAuthorityTaken?.Invoke(false);
 				return;
@@ -205,18 +217,18 @@ namespace jKnepel.Katamari
 			{
 				SetTakeAuthority(ClientID, _authoritySequence);
 				NetworkObjectPacket.WriteNetworkObjectPacket(bitWriter, packet);
-				_networkManager.SendByteDataToAll(_objectName, bitWriter.GetBuffer());
+				_networkManager.SendByteDataToAll(ObjectName, bitWriter.GetBuffer());
 			}
 			else
 			{
 				NetworkObjectPacket.WriteNetworkObjectPacket(bitWriter, packet);
-				_networkManager.SendByteDataToServer(_objectName, bitWriter.GetBuffer());
+				_networkManager.SendByteDataToServer(ObjectName, bitWriter.GetBuffer());
 			}
 		}
 
 		public void ReleaseAuthority()
 		{
-			if (!IsAuthor || IsOwner) return;
+			if (!IsAuthor || IsOwner || !_networkManager.IsConnected) return;
 
 			_authoritySequence++;
 			BitWriter bitWriter = new();
@@ -225,20 +237,20 @@ namespace jKnepel.Katamari
 			{
 				SetReleaseAuthority(packet.AuthoritySequence);
 				NetworkObjectPacket.WriteNetworkObjectPacket(bitWriter, packet);
-				_networkManager.SendByteDataToAll(_objectName, bitWriter.GetBuffer());
+				_networkManager.SendByteDataToAll(ObjectName, bitWriter.GetBuffer());
 			}
 			else
 			{
 				NetworkObjectPacket.WriteNetworkObjectPacket(bitWriter, packet);
-				_networkManager.SendByteDataToServer(_objectName, bitWriter.GetBuffer());
+				_networkManager.SendByteDataToServer(ObjectName, bitWriter.GetBuffer());
 			}
 		}
 
 		public int CompareTo(NetworkObject other)
 		{
 			if (other == null) return 1;
-			if (PriorityAccumulator == other.PriorityAccumulator) return 0;
 			if (PriorityAccumulator < other.PriorityAccumulator) return 1;
+			if (PriorityAccumulator == other.PriorityAccumulator) return 0;
 			return -1;
 		}
 
@@ -249,12 +261,12 @@ namespace jKnepel.Katamari
 		private void RegisterNetworkObject()
 		{
 			if (_networkManager.IsHost)
-				_networkManager.RegisterByteData(_objectName, UpdateOwnershipHost);
+				_networkManager.RegisterByteData(ObjectName, UpdateOwnershipHost);
 			else
-				_networkManager.RegisterByteData(_objectName, UpdateOwnership);
+				_networkManager.RegisterByteData(ObjectName, UpdateOwnership);
 		}
 
-		private void ReleaseHostageAuthorities(byte clientID)
+		private void ReleaseHostageObjects(byte clientID)
 		{
 			if (_ownershipID == clientID)
 			{
@@ -279,69 +291,69 @@ namespace jKnepel.Katamari
 					if (_ownershipID != 0 || !IsOwnershipNewer(packet.OwnershipSequence))
 					{
 						BitWriter writer = new();
-						NetworkObjectPacket answer = new(NetworkObjectPacket.EPacketTypes.TakeOwnership, sender, _ownershipSequence, _authoritySequence);
+						NetworkObjectPacket answer = new(NetworkObjectPacket.EPacketTypes.TakeOwnership, _ownershipID, _ownershipSequence, _authoritySequence);
 						NetworkObjectPacket.WriteNetworkObjectPacket(writer, answer);
-						_networkManager.SendByteData(sender, _objectName, writer.GetBuffer());
+						_networkManager.SendByteData(sender, ObjectName, writer.GetBuffer());
 					}
 					else
 					{
 						SetTakeOwnership(sender, packet.OwnershipSequence);
-						if (_authorityID != sender) SetTakeAuthority(sender, packet.AuthoritySequence);
+						SetTakeAuthority(sender, packet.AuthoritySequence);
 						BitWriter writer = new();
-						NetworkObjectPacket answer = new(NetworkObjectPacket.EPacketTypes.TakeOwnership, sender, _ownershipSequence, _authoritySequence);
+						NetworkObjectPacket answer = new(NetworkObjectPacket.EPacketTypes.TakeOwnership, _ownershipID, _ownershipSequence, _authoritySequence);
 						NetworkObjectPacket.WriteNetworkObjectPacket(writer, answer);
-						_networkManager.SendByteDataToAll(_objectName, writer.GetBuffer());
+						_networkManager.SendByteDataToAll(ObjectName, writer.GetBuffer());
 					}
 					break;
 				case NetworkObjectPacket.EPacketTypes.ReleaseOwnership:
 					if (_ownershipID != sender || !IsOwnershipNewer(packet.OwnershipSequence))
 					{
 						BitWriter writer = new();
-						NetworkObjectPacket answer = new(NetworkObjectPacket.EPacketTypes.ReleaseOwnership, sender, _ownershipSequence, _authoritySequence);
+						NetworkObjectPacket answer = new(NetworkObjectPacket.EPacketTypes.TakeOwnership, _ownershipID, _ownershipSequence, _authoritySequence);
 						NetworkObjectPacket.WriteNetworkObjectPacket(writer, answer);
-						_networkManager.SendByteData(sender, _objectName, writer.GetBuffer());
+						_networkManager.SendByteData(sender, ObjectName, writer.GetBuffer());
 					}
 					else
 					{
 						SetReleaseOwnership(packet.OwnershipSequence);
 						BitWriter writer = new();
-						NetworkObjectPacket answer = new(NetworkObjectPacket.EPacketTypes.ReleaseOwnership, sender, _ownershipSequence, _authoritySequence);
+						NetworkObjectPacket answer = new(NetworkObjectPacket.EPacketTypes.ReleaseOwnership, _ownershipID, _ownershipSequence, _authoritySequence);
 						NetworkObjectPacket.WriteNetworkObjectPacket(writer, answer);
-						_networkManager.SendByteDataToAll(_objectName, writer.GetBuffer());
+						_networkManager.SendByteDataToAll(ObjectName, writer.GetBuffer());
 					}
 					break;
 				case NetworkObjectPacket.EPacketTypes.TakeAuthority:
 					if (_ownershipID != 0 || _authorityID == sender || !IsAuthorityNewer(packet.AuthoritySequence))
 					{
 						BitWriter writer = new();
-						NetworkObjectPacket answer = new(NetworkObjectPacket.EPacketTypes.TakeAuthority, sender, _ownershipSequence, _authoritySequence);
+						NetworkObjectPacket answer = new(NetworkObjectPacket.EPacketTypes.TakeAuthority, _authorityID, _ownershipSequence, _authoritySequence);
 						NetworkObjectPacket.WriteNetworkObjectPacket(writer, answer);
-						_networkManager.SendByteData(sender, _objectName, writer.GetBuffer());
+						_networkManager.SendByteData(sender, ObjectName, writer.GetBuffer());
 					}
 					else
 					{
 						SetTakeAuthority(sender, packet.AuthoritySequence);
 						BitWriter writer = new();
-						NetworkObjectPacket answer = new(NetworkObjectPacket.EPacketTypes.TakeAuthority, sender, _authoritySequence, _authoritySequence);
+						NetworkObjectPacket answer = new(NetworkObjectPacket.EPacketTypes.TakeAuthority, _authorityID, _ownershipSequence, _authoritySequence);
 						NetworkObjectPacket.WriteNetworkObjectPacket(writer, answer);
-						_networkManager.SendByteDataToAll(_objectName, writer.GetBuffer());
+						_networkManager.SendByteDataToAll(ObjectName, writer.GetBuffer());
 					}
 					break;
 				case NetworkObjectPacket.EPacketTypes.ReleaseAuthority:
 					if (_authorityID != sender || !IsAuthorityNewer(packet.AuthoritySequence))
 					{
 						BitWriter writer = new();
-						NetworkObjectPacket answer = new(NetworkObjectPacket.EPacketTypes.ReleaseAuthority, sender, _ownershipSequence, _authoritySequence);
+						NetworkObjectPacket answer = new(NetworkObjectPacket.EPacketTypes.TakeAuthority, _authorityID, _ownershipSequence, _authoritySequence);
 						NetworkObjectPacket.WriteNetworkObjectPacket(writer, answer);
-						_networkManager.SendByteData(sender, _objectName, writer.GetBuffer());
+						_networkManager.SendByteData(sender, ObjectName, writer.GetBuffer());
 					}
 					else
 					{
 						SetReleaseAuthority(packet.AuthoritySequence);
 						BitWriter writer = new();
-						NetworkObjectPacket answer = new(NetworkObjectPacket.EPacketTypes.ReleaseAuthority, sender, _ownershipSequence, _authoritySequence);
+						NetworkObjectPacket answer = new(NetworkObjectPacket.EPacketTypes.ReleaseAuthority, _authorityID, _ownershipSequence, _authoritySequence);
 						NetworkObjectPacket.WriteNetworkObjectPacket(writer, answer);
-						_networkManager.SendByteDataToAll(_objectName, writer.GetBuffer());
+						_networkManager.SendByteDataToAll(ObjectName, writer.GetBuffer());
 					}
 					break;
 			}
@@ -353,13 +365,12 @@ namespace jKnepel.Katamari
 			NetworkObjectPacket packet = NetworkObjectPacket.ReadNetworkObjectPacket(reader);
 			switch (packet.PacketType)
 			{
-				// TODO : clients should also check sequence
 				case NetworkObjectPacket.EPacketTypes.TakeOwnership:
 					SetTakeOwnership(packet.ClientID, packet.OwnershipSequence);
 					SetTakeAuthority(packet.ClientID, packet.AuthoritySequence);
 					break;
 				case NetworkObjectPacket.EPacketTypes.ReleaseOwnership:
-					SetReleaseOwnership(packet.AuthoritySequence);
+					SetReleaseOwnership(packet.OwnershipSequence);
 					break;
 				case NetworkObjectPacket.EPacketTypes.TakeAuthority:
 					SetTakeAuthority(packet.ClientID, packet.AuthoritySequence);
@@ -374,7 +385,7 @@ namespace jKnepel.Katamari
 		{
 			_ownershipID = clientID;
 			_ownershipSequence = ownershipSequence;
-			
+
 			if (_onOwnershipTaken != null)
 			{
 				_onOwnershipTaken.Invoke(clientID == ClientID);
@@ -400,7 +411,9 @@ namespace jKnepel.Katamari
 			}
 
 #if DEBUG_AUTHORITY
-			if (clientID == ClientID)
+			if (clientID == 0)
+				_materialInstance.color = Color.white;
+			else if (clientID == ClientID)
 				_materialInstance.color = _networkManager.ClientInformation.Color;
 			else
 				_materialInstance.color = _networkManager.ConnectedClients[clientID].Color;
@@ -435,8 +448,6 @@ namespace jKnepel.Katamari
 
 	public struct NetworkObjectState : IStructData
 	{
-		public ushort OwnershipSequence;
-		public ushort AuthoritySequence;
 		public Vector3 Position;
 		public Quaternion Rotation;
 		public bool AtRest;
@@ -445,8 +456,6 @@ namespace jKnepel.Katamari
 
 		public static NetworkObjectState ReadNetworkObjectState(BitReader reader)
 		{
-			ushort authoritySequence = reader.ReadUInt16();
-			ushort ownershipSequence = reader.ReadUInt16();
 			Vector3 position = reader.ReadVector3();
 			Quaternion rotation = reader.ReadQuaternion();
 			bool atRest = reader.ReadBoolean();
@@ -455,8 +464,6 @@ namespace jKnepel.Katamari
 
 			return new()
 			{
-				OwnershipSequence = ownershipSequence,
-				AuthoritySequence = authoritySequence,
 				Position = position,
 				Rotation = rotation,
 				AtRest = atRest,
@@ -467,8 +474,6 @@ namespace jKnepel.Katamari
 
 		public static void WriteNetworkObjectState(BitWriter writer, NetworkObjectState data)
 		{
-			writer.WriteUInt16(data.OwnershipSequence);
-			writer.WriteUInt16(data.AuthoritySequence);
 			writer.WriteVector3(data.Position);
 			writer.WriteQuaternion(data.Rotation);
 			writer.WriteBoolean(data.AtRest);
