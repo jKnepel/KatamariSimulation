@@ -259,7 +259,7 @@
       "url": "https://packages.unity.com"
     },
     "jknepel.simpleunitynetworking": {
-      "version": "https://github.com/jKnepel/SimpleUnityNetworking.git#upm",
+      "version": "https://github.com/jKnepel/SimpleUnityNetworking.git#0.2.4",
       "depth": 0,
       "source": "git",
       "dependencies": {},

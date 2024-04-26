@@ -10,8 +10,6 @@ namespace jKnepel.Katamari.AttachableSimulation
 
 		[SerializeField] private NetworkManager _networkManager;
 		[SerializeField] private Rigidbody _rb;
-		[SerializeField] private Camera _camera;
-		[SerializeField] private Vector3 _cameraOffset = new(0, 3, -7);
 
 		[SerializeField] private float _forceMult = 100;
 
@@ -27,8 +25,6 @@ namespace jKnepel.Katamari.AttachableSimulation
 				_networkManager = GameObject.FindWithTag("NetworkManager").GetComponent<NetworkManager>();
 			if (_rb == null)
 				_rb = GetComponent<Rigidbody>();
-			if (_camera == null)
-				_camera = Camera.main;
 
 			_input = new();
 			_networkManager.OnConnected += _input.Enable;
@@ -40,12 +36,6 @@ namespace jKnepel.Katamari.AttachableSimulation
 			Vector2 dir = _input.gameplay.directional.ReadValue<Vector2>();
 			Vector3 delta = new(dir.x, 0, dir.y);
 			_rb.AddForce(_forceMult * Time.fixedDeltaTime * delta);
-		}
-
-		private void LateUpdate()
-		{
-			_camera.transform.position = transform.position + _cameraOffset;
-			_camera.transform.LookAt(transform);
 		}
 
 		private void OnTriggerEnter(Collider other)

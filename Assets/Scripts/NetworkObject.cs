@@ -90,7 +90,7 @@ namespace jKnepel.Katamari
 			if (!IsResponsible) return;
 
 			_priorityAccumulator += _rb.velocity.magnitude + _rb.angularVelocity.magnitude;
-			_priorityAccumulator += (_lastPosition - _rb.position).magnitude;
+			_priorityAccumulator += Vector3.Distance(_lastPosition, _rb.position);;
 			_lastPosition = _rb.position;
 
 			_frameNumber++;
